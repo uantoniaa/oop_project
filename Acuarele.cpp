@@ -1,6 +1,6 @@
 #include "Acuarele.h"
 
-Acuarele::Acuarele(int pret, char marime, int nrCulori) {
+Acuarele::Acuarele(int pret, int nrCulori) {
 
 }
 void Acuarele::setPret(int pret) {
@@ -8,13 +8,6 @@ void Acuarele::setPret(int pret) {
 }
 int Acuarele::getPret() {
     return Pret;
-}
-void Acuarele::setMarime(char marime) {
-    Marime = marime;
-}
-
-char Acuarele::getMarime() {
-    return Marime;
 }
 
 void Acuarele::setNrCulori(int nrCulori) {
@@ -26,7 +19,6 @@ int Acuarele::getNrCulori() {
 }
 
 ostream &operator<<(ostream &COUT, Acuarele &Acuarele1) {
-    COUT << "Marime ->"<<Acuarele1.getMarime();
     COUT << "Pret ->"<<Acuarele1.getPret();
     COUT << "NrCulori ->"<<Acuarele1.getNrCulori(); 
     return COUT;
