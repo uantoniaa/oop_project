@@ -6,12 +6,9 @@ using std::ostream;
 
 class Acuarele {
     int Pret;
-    char Marime;
     int NrCulori;
 public:
-    explicit Acuarele(int pret, char marime, int nrCulori);
-    void setMarime(char marime);;
-    char getMarime();;
+    explicit Acuarele(int pret, int nrCulori);
     void setPret(int pret);
     int getPret();
     void setNrCulori(int nrCulori);
