@@ -1,5 +1,6 @@
 #include "Ghiozdan.h"
 
+
 Ghiozdan::Ghiozdan(int pret, char marime, int culoare) {
 
 }
