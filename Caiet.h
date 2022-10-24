@@ -8,7 +8,7 @@ class Caiet {
     char Marime;
 public:
     explicit  Caiet(int pret, char marime);
-    void setMarime(char marime);;
+    void setMarime(char marime);
     char getMarime();;
     void setPret(int pret);
     int getPret();
