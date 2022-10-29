@@ -1,6 +1,6 @@
 #include "Pix.h"
 
-Pix::Pix(int pret, char marime, int culoare) {
+Pix::Pix(int pret, char marime, char culoare) {
 
 }
 void Pix::setPret(int pret) {
@@ -17,11 +17,11 @@ char Pix::getMarime() {
     return Marime;
 }
 
-void Pix::setCuloare(int culoare) {
+void Pix::setCuloare(char culoare) {
     Culoare = culoare;
 }
 
-int Pix::getCuloare() {
+char Pix::getCuloare() {
     return Culoare;
 }
 
