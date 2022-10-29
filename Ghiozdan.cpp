@@ -1,7 +1,7 @@
 #include "Ghiozdan.h"
 
 
-Ghiozdan::Ghiozdan(int pret, char marime, int culoare) {
+Ghiozdan::Ghiozdan(int pret, char marime, char culoare) {
 
 }
 void Ghiozdan::setPret(int pret) {
@@ -18,11 +18,11 @@ char Ghiozdan::getMarime() {
     return Marime;
 }
 
-void Ghiozdan::setCuloare(int culoare) {
+void Ghiozdan::setCuloare(char culoare) {
     Culoare = culoare;
 }
 
-int Ghiozdan::getCuloare() {
+char Ghiozdan::getCuloare() {
     return Culoare;
 }
 
