@@ -7,15 +7,15 @@ using std::ostream;
 class Pix {
     int Pret;
     char Marime;
-    int Culoare;
+    char Culoare;
 public:
-    explicit Pix(int pret, char marime, int culoare);
+    explicit Pix(int pret, char marime, char culoare);
     void setMarime(char marime);;
     char getMarime();;
     void setPret(int pret);
     int getPret();
-    void setCuloare(int culoare);
-    int getCuloare();
+    void setCuloare(char culoare);
+    char getCuloare();
 
 };
 ostream &operator<<(ostream &COUT, Pix &Pix1);
