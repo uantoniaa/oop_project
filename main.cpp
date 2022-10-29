@@ -1,5 +1,8 @@
 #include <iostream>
-
+#include "Acuarele.h"
+#include "Caiet.h"
+#include "Ghiozdan.h"
+#include "Pix.h"
 int main() {
 	Acuarele Acuarele1(20, 10);
     	Caiet Caiet1(5, A4);
