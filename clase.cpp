@@ -30,7 +30,7 @@ std::ostream& operator<<(std::ostream& COUT, const Pix &Pix1) {
 
 //constructor de initializare pentru clasa Acuarele
 Acuarele::Acuarele() {
-};
+}
 Acuarele::Acuarele(int pret_, int nrCulori_) : pret{pret_}, nrCulori{nrCulori_} {
 }
 std::ostream& operator<<(std::ostream& COUT, const Acuarele &Acuarele1) {
