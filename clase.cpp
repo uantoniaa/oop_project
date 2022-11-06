@@ -47,6 +47,7 @@ std::ostream& operator<<(std::ostream &COUT,const Caiet &Caiet1) {
     COUT<<"Marime:"<<Caiet1.marime<<std::endl;
     return COUT;
 }
+//constructor de initializare pentru clasa Ghiozdan
 Ghiozdan::Ghiozdan(int pret_, const std::string& marime_, const std::string & culoare_) : pret{pret_}, marime{marime_}, culoare{culoare_} {
 }
 std::ostream& operator<<(std::ostream &COUT,const Ghiozdan &Ghiozdan1) {
