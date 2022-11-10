@@ -40,3 +40,10 @@ public:
     Ghiozdan(int pret_, const std::string& marime_,const std::string& culoare_);
     friend std::ostream& operator<<(std::ostream& COUT,const Ghiozdan &Ghiozdan1);
 };
+class Client{
+    int nrProduseAchizitionate;
+    int pretBon;
+public:
+    Client(int nrProduseAchizitionate_, int pretBon_);
+    friend std::ostream& operator<<(std::ostream &COUT, const Client &Client1);
+};
