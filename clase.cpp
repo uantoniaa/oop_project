@@ -56,3 +56,11 @@ std::ostream& operator<<(std::ostream &COUT,const Ghiozdan &Ghiozdan1) {
     COUT<<"Culoare:"<<Ghiozdan1.culoare<<std::endl;
     return COUT;
 }
+//constructor de initializare pentru clasa Client
+Client::Client(int nrProduseAchizitionate_, int pretBon_) : nrProduseAchizitionate{nrProduseAchizitionate_}, pretBon{pretBon_} {
+}
+std::ostream& operator<<(std::ostream &COUT,const Client &Client1) {
+    COUT<<"Numarul produselor achizitionate: "<<Client1.nrProduseAchizitionate<<std::endl;
+    COUT<<"Pretul bonului: "<<Client1.pretBon<<std::endl;
+    return COUT;
+}
