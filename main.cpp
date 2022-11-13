@@ -19,6 +19,6 @@ int main(){
 
     std::cout<< "Date comanda:" << std::endl;
     Comanda cmd(17, p, ac, g, c);
-    cmd.get_pretBon(p, ac, g, c);
+    cmd.set_pretBon(p, ac, g, c);
     std::cout<<cmd<<std::endl;
 }
