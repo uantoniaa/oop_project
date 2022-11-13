@@ -12,11 +12,10 @@ Pix::Pix(const Pix& other):nrPixuri{other.nrPixuri}, pret{other.pret}, marime{ot
 //operator= copiere Pix
 Pix&Pix::operator=(const Pix& other)
 {
-    nrPixuri = other.nrPixuri_;
-    pret = other.pret;
-    marime = other.marime;
-    culoare=other.culoare;
-    ;
+    (*this).nrPixuri = other.nrPixuri;
+    (*this).pret = other.pret;
+    (*this).marime = other.marime;
+    (*this).culoare=other.culoare;
     return *this;
 }
 
