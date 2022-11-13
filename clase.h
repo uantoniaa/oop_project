@@ -58,7 +58,7 @@ class Comanda {
     int pretBon;
 
 public:
-    Comanda(int nrComanda_, Pix p, Acuarele ac, Ghiozdan g, Caiet c);
+    Comanda(int nrComanda_,const Pix &p,const Acuarele &ac,const Ghiozdan &g,const Caiet &c);
     //functie care calculeaza numarul de produse
     int get_pretBon(Pix p, Acuarele ac, Ghiozdan g, Caiet c);
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);

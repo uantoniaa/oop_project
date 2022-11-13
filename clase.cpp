@@ -111,7 +111,9 @@ double Ghiozdan::getPret()
 }
 
 
-Comanda::Comanda (int nrComanda_, Pix p_, Acuarele ac_, Ghiozdan g_, Caiet c_) : nrComanda{nrComanda_}, p{p_}, ac{ac_}, g{g_}, c{c_} {}
+Comanda::Comanda (int nrComanda_,const Pix &p_,const Acuarele &ac_,const Ghiozdan &g_,const Caiet &c_) : nrComanda{nrComanda_}, p{p_}, ac{ac_}, g{g_}, c{c_} 
+{
+}
 //pretBon = get_pretBon(Pix p_, Acuarele ac_, Ghiozdan g_, Caiet c_);
 
 
