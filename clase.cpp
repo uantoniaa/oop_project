@@ -12,6 +12,7 @@ Pix::Pix(const Pix& other):nrPixuri{other.nrPixuri}, pret{other.pret}, marime{ot
 //operator= copiere Pix
 Pix&Pix::operator=(const Pix& other)
 {
+    nrPixuri = other.nrPixuri_;
     pret = other.pret;
     marime = other.marime;
     culoare=other.culoare;
@@ -112,17 +113,18 @@ double Ghiozdan::getPret()
 
 
 Comanda::Comanda (int nrComanda_,const Pix &p_,const Acuarele &ac_,const Ghiozdan &g_,const Caiet &c_) : nrComanda{nrComanda_}, p{p_}, ac{ac_}, g{g_}, c{c_}
-{}
+{(*this).pretBon = 0;}
 //pretBon = get_pretBon(Pix p_, Acuarele ac_, Ghiozdan g_, Caiet c_);
 
 
-void Comanda::set_pretBon(Pix p, Acuarele ac, Ghiozdan g, Caiet c)
+void Comanda::set_pretBon(Pix other_p, Acuarele other_ac, Ghiozdan other_g, Caiet other_c)
 {
     // this->pretBon = p.getPixuri() * p.getPret() + ac.getAcuarele() * ac.getPret() + g.getGhiozdane() * g.getPret() + c.getCaiete() * c.getPret();
-    (*this).pretBon = p.getPixuri() * p.getPret() + ac.getAcuarele() * ac.getPret() + g.getGhiozdane() * g.getPret() + c.getCaiete() * c.getPret();
+    (*this).pretBon = other_p.getPixuri() * other_p.getPret() + other_ac.getAcuarele() * other_ac.getPret() + other_g.getGhiozdane() * other_g.getPret() + other_c.getCaiete() * other_c.getPret();
     // return pretBon;
 
 }
+
 
 std::ostream& operator<<(std::ostream &COUT,const Comanda &Comanda1)
 {
