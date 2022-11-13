@@ -55,11 +55,20 @@ class Comanda {
     Acuarele ac;
     Ghiozdan g;
     Caiet c;
-    int pretBon;
+    double pretBon;
 
 public:
     Comanda(int nrComanda_, const Pix &p,const Acuarele &ac,const Ghiozdan &g,const Caiet &c);
-    //functie care calculeaza numarul de produse
+    //functie care calculeaza totalul comenzii si valorea finala a bonului, care aplica reducere de 50 de lei daca este mai mare de 150 lei
     void set_pretBon(Pix p, Acuarele ac, Ghiozdan g, Caiet c);
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
+};
+
+class Client {
+    int id_client;
+    std::string metoda_plata;
+    Comanda cmd;
+public:
+    Client(int id_client_, const std::string& metoda_plata, const Comanda &cmd);
+    friend std::ostream& operator<<(std::ostream& COUT,const Client &Client1);
 };

@@ -21,4 +21,8 @@ int main(){
     Comanda cmd(17, p, ac, g, c);
     cmd.set_pretBon(p, ac, g, c);
     std::cout<<cmd<<std::endl;
+
+    std::cout<< "Date client: " << std::endl;
+    Client cl1(155, "cash", cmd);
+    std::cout<<cl1<<std::endl;
 }
