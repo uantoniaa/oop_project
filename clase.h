@@ -59,16 +59,22 @@ class Comanda {
 
 public:
     Comanda(int nrComanda_, const Pix &p,const Acuarele &ac,const Ghiozdan &g,const Caiet &c);
-    //functie care calculeaza totalul comenzii si valorea finala a bonului, care aplica reducere de 50 de lei daca este mai mare de 150 lei
+    //functie care calculeaza totalul comenzii si valorea finala a bonului,
+    // care aplica reducere de 50 de lei daca este mai mare de 150 lei;
     void set_pretBon(Pix p, Acuarele ac, Ghiozdan g, Caiet c);
+    int get_pretBon();
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
 };
 
 class Client {
     int id_client;
+    int puncte_fidelitate;
     std::string metoda_plata;
     Comanda cmd;
+
 public:
-    Client(int id_client_, const std::string& metoda_plata, const Comanda &cmd);
+    Client(int id_client_, int puncte_fidelitate_, const std::string& metoda_plata, const Comanda &cmd);
+    void client_fidel(); //daca un client are comanda de peste 25 de lei, primeste un punct de fidelitate,
+    // iar la 5 puncte de fidelitate primeste un cupon cu care isi poate lua un cadou;
     friend std::ostream& operator<<(std::ostream& COUT,const Client &Client1);
 };

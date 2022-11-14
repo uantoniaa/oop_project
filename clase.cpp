@@ -34,6 +34,7 @@ double Pix::getPret()
 }
 std::ostream& operator<<(std::ostream& COUT, const Pix &Pix1)
 {
+    COUT<<"Nr. pixuri: "<<Pix1.nrPixuri<<std::endl;
     COUT <<"Pret:"<<Pix1.pret<<" lei"<<std::endl;
     COUT <<"Marime:"<<Pix1.marime<<std::endl;
     COUT <<"Culoare:"<<Pix1.culoare<<std::endl;
@@ -51,8 +52,9 @@ Acuarele::Acuarele(int nrAcuarele_, int pret_, int nrCulori_) : nrAcuarele{nrAcu
 }
 std::ostream& operator<<(std::ostream& COUT, const Acuarele &Acuarele1)
 {
-    COUT << "Pret:"<< Acuarele1.pret<<" lei"<<std::endl;
-    COUT << "NrCulori:"<<Acuarele1.nrCulori<<std::endl;
+    COUT<<" Nr. Acuarele: "<<Acuarele1.nrAcuarele<<std::endl;
+    COUT<<" Pret:"<< Acuarele1.pret<<" lei"<<std::endl;
+    COUT<<" NrCulori:"<<Acuarele1.nrCulori<<std::endl;
     return COUT;
 }
 int Acuarele::getAcuarele()
@@ -70,8 +72,9 @@ Caiet::Caiet(int nrCaiete_, int pret_,const std::string& marime_) : nrCaiete{nrC
 }
 std::ostream& operator<<(std::ostream &COUT,const Caiet &Caiet1)
 {
-    COUT<<"Pret:"<<Caiet1.pret<<" lei"<<std::endl;
-    COUT<<"Marime:"<<Caiet1.marime<<std::endl;
+    COUT<<" Nr. Caiete: "<<Caiet1.nrCaiete<<std::endl;
+    COUT<<" Pret:"<<Caiet1.pret<<" lei"<<std::endl;
+    COUT<<" Marime:"<<Caiet1.marime<<std::endl;
     return COUT;
 }
 //functie care retine numarul de caiete
@@ -91,10 +94,10 @@ Ghiozdan::Ghiozdan(int nrGhiozdane_, int pret_, const std::string& marime_, cons
 }
 std::ostream& operator<<(std::ostream &COUT,const Ghiozdan &Ghiozdan1)
 {
-
-    COUT<<"Pret:"<<Ghiozdan1.pret<<" lei"<<std::endl;
-    COUT<<"Marime:"<<Ghiozdan1.marime<<std::endl;
-    COUT<<"Culoare:"<<Ghiozdan1.culoare<<std::endl;
+    COUT<<" Nr. Ghiozdane: "<<Ghiozdan1.nrGhiozdane<<std::endl;
+    COUT<<" Pret:"<<Ghiozdan1.pret<<" lei"<<std::endl;
+    COUT<<" Marime:"<<Ghiozdan1.marime<<std::endl;
+    COUT<<" Culoare:"<<Ghiozdan1.culoare<<std::endl;
     return COUT;
 }
 
@@ -126,28 +129,41 @@ void Comanda::set_pretBon(Pix other_p, Acuarele other_ac, Ghiozdan other_g, Caie
 
 
 }
+int Comanda::get_pretBon(){
+    return pretBon;
+}
+std::ostream& operator<<(std::ostream &COUT,const Comanda &Comanda1) {
 
 
-std::ostream& operator<<(std::ostream &COUT,const Comanda &Comanda1)
-{
+    COUT<<" Nr. comanda: "<<Comanda1.nrComanda<<std::endl;
 
-    COUT<<"Nr. comanda: "<<Comanda1.nrComanda<<std::endl;
-
-    COUT<<"Pret bon: "<<Comanda1.pretBon<<" lei"<<std::endl;
+    COUT<<" Pret bon: "<<Comanda1.pretBon<<" lei"<<std::endl;
     return COUT;
 }
 
 //constructor de initializare pentru clasa Client
-Client::Client(int id_client_, const std::string & metoda_plata_, const Comanda &cmd_) : id_client{id_client_}, metoda_plata{metoda_plata_}, cmd{cmd_}
+Client::Client(int id_client_, int puncte_fidelitate_, const std::string & metoda_plata_, const Comanda &cmd_) : id_client{id_client_}, puncte_fidelitate{puncte_fidelitate_},metoda_plata{metoda_plata_}, cmd{cmd_}
 {
 }
 std::ostream& operator<<(std::ostream &COUT,const Client &Client1)
 {
 
-    COUT<<"Id client: "<<Client1.id_client<<std::endl;
-    COUT<<"Metoda plata: "<<Client1.metoda_plata<<std::endl;
+    COUT<<" ID client: "<<Client1.id_client<<std::endl;
+    COUT<<" Metoda plata: "<<Client1.metoda_plata<<std::endl;
+    COUT<<" Puncte de fidelitate: "<<Client1.puncte_fidelitate<<std::endl;
     return COUT;
 }
 
+void Client::client_fidel(){
 
-
+    int cupon = 0;
+    if(cmd.get_pretBon() >=25)
+        puncte_fidelitate++;
+    if(puncte_fidelitate >= 5) //la 5 puncte de fidelitate, clientul castiga un cupon
+        cupon++;
+    std::cout<<" Nr. cupoane: "<<cupon<<std::endl;
+    if(cupon >=1 )
+        std::cout<<" Clientul isi poate alege un cadou. "<<std::endl;
+    else
+        std::cout<<" Clientului ii mai trebuie "<<(5-puncte_fidelitate)<<" puncte de fidelitate pana isi poate alege un cadou"<<std::endl;
+}
