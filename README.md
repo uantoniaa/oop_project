@@ -1,1 +1,4 @@
 # Magazin de rechizite
+
+Acest proiect reprezinta o replica, atat functional, cat si fizic, a unui magazin de rechizite. Este compus din 7 clase, patru dintre acestea fiind cele mai intalnite produse care se gasesc in orice magazin de acest fel(acuarele, ghiozdan, pix si caiet), iar celalte trei au rolul de a asigura compunerea dintre clase, cat si o relatie care sa aiba ca urmare anumite functionalitati(client, comanda, stoc_magazin). 
+Functionalitatile implementate sunt calcularea bonului, aplicarea unei reduceri de 15% daca bonul depaseste suma de 150 de lei, calcularea punctelor de fidelitate, iar in cazul in care are mai mult de 15 puncte de fidelitate, castigarea unui cupon, calcularea stocului de produse ramas dupa comanda, a sumei de bani totale, castigate in urma comenzii, dar si calcularea procentului care reprezinta cu cat la suta a crescut suma de bani din magazin fata de ziua precedenta.
