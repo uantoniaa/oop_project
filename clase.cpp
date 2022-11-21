@@ -177,19 +177,19 @@ std::ostream& operator<<(std::ostream &COUT,const Client &Client1)
 
 
 ///                     constructor de initializare pentru clasa Stoc_magazin
-Stoc_magazin::Stoc_magazin(int nrPixuri_stoc_, int nrAcuarele_stoc_, int nrGhiozdane_stoc_, int nrCaiete_stoc_, int sumaInitiala_, const Pix &p_,const Acuarele &ac_,const Ghiozdan &g_,const Caiet &c_, const Comanda &cmd_)
-: nrPixuri_stoc{nrPixuri_stoc_},nrAcuarele_stoc{nrAcuarele_stoc_}, nrGhiozdane_stoc{nrGhiozdane_stoc_}, nrCaiete_stoc{nrCaiete_stoc_}, sumaInitiala{sumaInitiala_}, p{p_},ac{ac_},g{g_},c{c_}, cmd{cmd_}
+Stoc_magazin::Stoc_magazin(int nrPixuri_stoc_, int nrAcuarele_stoc_, int nrGhiozdane_stoc_, int nrCaiete_stoc_, int sumaInitiala_, const Comanda &cmd_)
+: nrPixuri_stoc{nrPixuri_stoc_},nrAcuarele_stoc{nrAcuarele_stoc_}, nrGhiozdane_stoc{nrGhiozdane_stoc_}, nrCaiete_stoc{nrCaiete_stoc_}, sumaInitiala{sumaInitiala_},  cmd{cmd_}
 {
 }
 
 void Stoc_magazin::stoc_ramas(){
-    nrPixuri_stoc= nrPixuri_stoc - p.getPixuri();
+    nrPixuri_stoc= nrPixuri_stoc - cmd.getPixuri_();
     std::cout<<"Numarul de pixuri de pe stoc, dupa comanda: "<<nrPixuri_stoc<<std::endl;
-    nrAcuarele_stoc = nrAcuarele_stoc - ac.getAcuarele();
+    nrAcuarele_stoc = nrAcuarele_stoc - cmd.getAcuarele_();
     std::cout<<"Numarul de acuarele de pe stoc, dupa comanda: "<<nrAcuarele_stoc<<std::endl;
-    nrGhiozdane_stoc = nrGhiozdane_stoc - g.getGhiozdane();
+    nrGhiozdane_stoc = nrGhiozdane_stoc - cmd.getGhiozdane_();
     std::cout<<"Numarul de ghiozdane de pe stoc, dupa comanda: "<<nrGhiozdane_stoc<<std::endl;
-    nrCaiete_stoc = nrCaiete_stoc - c.getCaiete();
+    nrCaiete_stoc = nrCaiete_stoc - cmd.getCaiete_();
     std::cout<<"Numarul de caiete de pe stoc, dupa comanda: "<<nrCaiete_stoc<<std::endl;
 
 }

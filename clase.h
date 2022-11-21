@@ -65,6 +65,22 @@ public:
     //functie care calculeaza totalul comenzii si valorea finala a bonului, care aplica reducere de 50 de lei daca este mai mare de 150 lei
     void set_pretBon();
     int get_pretBon();
+    int getAcuarele_()
+    {
+        return ac.getAcuarele();
+    }
+    int getPixuri_()
+    {
+         return p.getPixuri();
+    }
+    int getGhiozdane_()
+    {
+        return g.getGhiozdane();
+    }
+    int getCaiete_()
+    {
+        return c.getCaiete();
+    }
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
 };
 
@@ -77,7 +93,7 @@ class Client {
 public:
     Client(int id_client_, int puncte_fidelitate_, const std::string& metoda_plata, const Comanda &cmd);
     void client_fidel(); //daca un client are comanda de peste 25 de lei, primeste un punct de fidelitate,
-    // iar la 15 puncte de fidelitate primeste un cupon cu care isi poate lua un cadou;
+    // iar la 15 puncte de fidelitate primeste un cupon cu care isi poate lua un cadou
     friend std::ostream& operator<<(std::ostream& COUT,const Client &Client1);
 };
 
@@ -87,16 +103,12 @@ class Stoc_magazin{
     int nrGhiozdane_stoc;
     int nrCaiete_stoc;
     int sumaInitiala; // banii care sunt in magazin inainte de comanda
-    Pix p;
-    Acuarele ac;
-    Ghiozdan g;
-    Caiet c;
     Comanda cmd;
 public:
-    Stoc_magazin(int nrPixuri_stoc_, int nrAcuarele_stoc_, int nrGhiozdane_stoc_, int nrCaiete_stoc_, int sumaInitiala_, const Pix &p,const Acuarele &ac,const Ghiozdan &g,const Caiet &c, const Comanda &cmd);
+    Stoc_magazin(int nrPixuri_stoc_, int nrAcuarele_stoc_, int nrGhiozdane_stoc_, int nrCaiete_stoc_, int sumaInitiala_, const Comanda &cmd);
     //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda
     void stoc_ramas();
-    //functie care calculeaza suma de bani din magazin, de dupa comanda si 
+    //functie care calculeaza suma de bani din magazin, de dupa comanda si
     //cu cat la suta a crescut suma de bani din magazin fata de ziua precedenta
     void sumaDupaVanzari();
     friend std::ostream& operator<<(std::ostream& COUT,const Stoc_magazin &Stoc_magazin1);

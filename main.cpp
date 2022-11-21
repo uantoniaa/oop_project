@@ -2,6 +2,7 @@
 #include "clase.h"
 int main(){
 //prima comanda
+    std::cout<<"\tPRIMA COMANDA"<<std::endl;
     std::cout<<"Date pix prima comanda:"<<std::endl;
     Pix p1(3, 2, "normal", "alb");
     std::cout<<p1<<std::endl;
@@ -29,28 +30,29 @@ int main(){
     std::cout<<cl1<<std::endl;
 
     std::cout<< "Date stoc magazin: " << std::endl;
-    Stoc_magazin St1(1000,500,70,500,1544,p1,ac1,g1,c1,cmd1);
+    Stoc_magazin St1(1000,500,70,500,1544,cmd1);
     std::cout<<"Stoc magazin dupa prima comanda:"<<std::endl;
     std::cout<<St1<<std::endl;
     St1.stoc_ramas();
     St1.sumaDupaVanzari();
-    std::cout<<std::endl;
-
+    std::cout<<"\n\n";
+    std::cout<<"\tA DOUA COMANDA\n"<<std::endl;
+//a doua comanda
     std::cout<<"Date pix a doua comanda:"<<std::endl;
-    Pix p2(5, 3, "mic", "rosu");
+    Pix p2(16, 3, "mic", "rosu");
     std::cout<<p2<<std::endl;
 
     std::cout<<"Date acuarele a doua comanda:"<<std::endl;
-    Acuarele ac2(3,15, 10);
+    Acuarele ac2(7,15, 10);
     std::cout<<ac2<<std::endl;
 
-//a doua comanda
+
     std::cout<<"Date Caiet a doua comanda:"<<std::endl;
     Caiet c2(7, 4, "A3");
     std::cout<<c1<<std::endl;
 
     std::cout<<"Date Ghiozdan a doua comanda:"<<std::endl;
-    Ghiozdan g2(1, 60, "copii", "albastru");
+    Ghiozdan g2(3, 60, "copii", "albastru");
     std::cout<<g2<<std::endl;
 
     std::cout<< "Date comanda 2:" << std::endl;
@@ -64,10 +66,9 @@ int main(){
     std::cout<<cl2<<std::endl;
 
     std::cout<<"Stoc magazin dupa a doua comanda:"<<std::endl;
-    Stoc_magazin St2(1000,500,70,500,1544,p2,ac2,g2,c2,cmd2);
+    Stoc_magazin St2(1000,500,70,500,1544,cmd2);
     std::cout<<St2<<std::endl;
     St2.stoc_ramas();
     St2.sumaDupaVanzari();
-
 
 }
