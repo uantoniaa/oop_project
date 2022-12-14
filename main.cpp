@@ -1,5 +1,11 @@
 #include <iostream>
-#include "clase.h"
+#include "Ghiozdan.hpp"
+#include "Pix.hpp"
+#include "Caiet.hpp"
+#include "Acuarele.hpp"
+#include "Client.hpp"
+#include "Comanda.hpp"
+#include "Stoc_magazin.hpp"
 int main(){
 //prima comanda
     std::cout<<"\tPRIMA COMANDA"<<std::endl;
