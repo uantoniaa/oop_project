@@ -1,7 +1,3 @@
-//
-// Created by Asus on 14/12/2022.
-//
-
 #ifndef OOP_COMANDA_HPP
 #define OOP_COMANDA_HPP
 #include <iostream>
@@ -41,6 +37,4 @@ public:
     }
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
 };
-
-
 #endif //OOP_COMANDA_HPP

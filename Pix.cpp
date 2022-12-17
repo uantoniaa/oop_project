@@ -9,7 +9,7 @@ Pix::Pix(int nrPixuri_, int pret_,const std::string& marime_,const std::string& 
 }
 
 //constructor de copiere pentru clasa Pix
-Pix::Pix(const Pix& other):nrPixuri{other.nrPixuri}, pret{other.pret}, marime{other.marime}, culoare{other.culoare}
+Pix::Pix(const Pix& other): Produs(), nrPixuri{other.nrPixuri}, pret{other.pret}, marime{other.marime}, culoare{other.culoare}
 {
 }
 
@@ -47,4 +47,3 @@ std::ostream& operator<<(std::ostream& COUT, const Pix &Pix1)
     COUT <<"Culoare:"<<Pix1.culoare<<std::endl;
     return COUT;
 }
-

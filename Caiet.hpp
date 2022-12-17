@@ -6,7 +6,8 @@
 #define OOP_CAIET_HPP
 #include <iostream>
 #include <string>
-class Caiet{
+#include "Produs.hpp"
+class Caiet:public Produs{
     int nrCaiete;
     int pret;
     std::string marime;

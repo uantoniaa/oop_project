@@ -1,4 +1,3 @@
-//
 // Created by Asus on 14/12/2022.
 //
 
@@ -6,8 +5,8 @@
 #define OOP_PIX_HPP
 #include <iostream>
 #include <string>
-
-class Pix {
+#include "Produs.hpp"
+class Pix:public Produs {
     int nrPixuri;
     int pret;
     std::string marime;

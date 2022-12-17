@@ -1,7 +1,3 @@
-//
-// Created by Asus on 14/12/2022.
-//
-
 #include "Comanda.hpp"
 
 ///                   constructor de initializare pentru clasa Comanda

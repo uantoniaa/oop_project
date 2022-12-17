@@ -6,8 +6,8 @@
 #define OOP_GHIOZDAN_HPP
 #include <iostream>
 #include <string>
-
-class Ghiozdan{
+#include "Produs.hpp"
+class Ghiozdan:public Produs{
     int nrGhiozdane;
     int pret;
     std::string marime;

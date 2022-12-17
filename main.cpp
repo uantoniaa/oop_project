@@ -14,7 +14,7 @@ int main(){
     std::cout<<p1<<std::endl;
 
     std::cout<<"Date acuarele prima comanda:"<<std::endl;
-    Acuarele ac1(1,20, 12);
+    Acuarele ac1(1, "gug", 20, 12);
     std::cout<<ac1<<std::endl;
 
     std::cout<<"Date Caiet prima comanda:"<<std::endl;
@@ -49,7 +49,7 @@ int main(){
     std::cout<<p2<<std::endl;
 
     std::cout<<"Date acuarele a doua comanda:"<<std::endl;
-    Acuarele ac2(7,15, 10);
+    Acuarele ac2(7,"biu",15, 10);
     std::cout<<ac2<<std::endl;
 
 

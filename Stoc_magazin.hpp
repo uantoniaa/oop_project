@@ -1,7 +1,3 @@
-//
-// Created by Asus on 14/12/2022.
-//
-
 #ifndef OOP_STOC_MAGAZIN_HPP
 #define OOP_STOC_MAGAZIN_HPP
 #include <iostream>
