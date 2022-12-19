@@ -8,7 +8,7 @@ Comanda::Comanda (int nrComanda_,const Pix &p_,const Acuarele &ac_,const Ghiozda
 void Comanda::set_pretBon()
 {
 
-    (*this).pretBon = p.valoarePixuri() + g.valoareGhiozdane() + ac.valoareAcuarele() + c.valoareCaiete();
+    (*this).pretBon = p.valoare() + g.valoare() + ac.valoare() + c.valoare();
 
     if((*this).pretBon > 150 ) //calculeaza reducerea de 15%, in cazul in care bonul este mai mare de 150 de lei
         (*this).pretBon = (*this).pretBon - (0.15 * (*this).pretBon);

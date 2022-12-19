@@ -9,15 +9,14 @@
 #include "Produs.hpp"
 class Caiet:public Produs{
     int nrCaiete;
-    int pret;
     std::string marime;
+    void afisare(std::ostream &COUT) const override;
 public:
-    Caiet(int nrCaiete_, int pret_, const std::string& marime_);
-    int getCaiete();
-    double getPret();
-    double valoareCaiete();
-    friend std::ostream& operator<<(std::ostream& COUT,const Caiet &Caiet1);
+    Caiet(int pret, const std::string &firma, int nrCaiete, const std::string &marime);
 
+
+    int getCaiete() const;
+    double valoare() const override{return getPret() * getCaiete();};
 };
 
 #endif //OOP_CAIET_HPP

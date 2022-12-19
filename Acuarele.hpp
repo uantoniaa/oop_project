@@ -10,10 +10,8 @@ class Acuarele:public Produs{
     void afisare(std::ostream &COUT) const override;
 public:
 
-
     Acuarele(int pret, const std::string &firma, int nrAcuarele, int nrCulori);
-    int getAcuarele();
-    double valoareAcuarele();
+    double valoare() const override {return getPret() * getAcuarele();};
     int getAcuarele() const;
 };
 

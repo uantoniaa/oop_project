@@ -9,15 +9,15 @@
 #include "Produs.hpp"
 class Ghiozdan:public Produs{
     int nrGhiozdane;
-    int pret;
     std::string marime;
     std::string culoare;
+    void afisare(std::ostream &COUT) const override;
 public:
-    Ghiozdan(int nrGhiozdane_, int pret_, const std::string& marime_,const std::string& culoare_);
-    int getGhiozdane();
-    double getPret();
-    double valoareGhiozdane();
-    friend std::ostream& operator<<(std::ostream& COUT,const Ghiozdan &Ghiozdan1);
+    Ghiozdan(int pret, const std::string &firma, int nrGhiozdane, const std::string &marime,
+             const std::string &culoare);
+
+    int getGhiozdane() const;
+    double valoare() const override {return getPret() * getGhiozdane();};
 };
 
 

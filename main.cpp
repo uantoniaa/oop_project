@@ -10,19 +10,19 @@ int main(){
 //prima comanda
     std::cout<<"\tPRIMA COMANDA"<<std::endl;
     std::cout<<"Date pix prima comanda:"<<std::endl;
-    Pix p1(3, 2, "normal", "alb");
+    Pix p1(3, "Schneider",2, "normal", "alb");
     std::cout<<p1<<std::endl;
 
     std::cout<<"Date acuarele prima comanda:"<<std::endl;
-    Acuarele ac1(1, "gug", 20, 12);
+    Acuarele ac1(1, "Colibri", 20, 12);
     std::cout<<ac1<<std::endl;
 
     std::cout<<"Date Caiet prima comanda:"<<std::endl;
-    Caiet c1(3, 5, "A4");
+    Caiet c1(3,"Sigma", 5, "A4");
     std::cout<<c1<<std::endl;
 
     std::cout<<"Date Ghiozdan prima comanda:"<<std::endl;
-    Ghiozdan g1(2, 80, "copii", "roz");
+    Ghiozdan g1(2,"Adidas", 80, "copii", "roz");
     std::cout<<g1<<std::endl;
 
     std::cout<< "Date comanda 1:" << std::endl;
@@ -45,20 +45,20 @@ int main(){
     std::cout<<"\tA DOUA COMANDA\n"<<std::endl;
 //a doua comanda
     std::cout<<"Date pix a doua comanda:"<<std::endl;
-    Pix p2(16, 3, "mic", "rosu");
+    Pix p2(16,"Bic", 3, "mic", "rosu");
     std::cout<<p2<<std::endl;
 
     std::cout<<"Date acuarele a doua comanda:"<<std::endl;
-    Acuarele ac2(7,"biu",15, 10);
+    Acuarele ac2(7,"Faber-Castell",15, 10);
     std::cout<<ac2<<std::endl;
 
 
     std::cout<<"Date Caiet a doua comanda:"<<std::endl;
-    Caiet c2(7, 4, "A3");
+    Caiet c2(7, "Skull",4, "A3");
     std::cout<<c1<<std::endl;
 
     std::cout<<"Date Ghiozdan a doua comanda:"<<std::endl;
-    Ghiozdan g2(3, 60, "copii", "albastru");
+    Ghiozdan g2(3, "Nike",60, "copii", "albastru");
     std::cout<<g2<<std::endl;
 
     std::cout<< "Date comanda 2:" << std::endl;

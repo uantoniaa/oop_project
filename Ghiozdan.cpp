@@ -4,27 +4,19 @@
 
 #include "Ghiozdan.hpp"
 
-///                    constructor de initializare pentru clasa Ghiozdan
-Ghiozdan::Ghiozdan(int nrGhiozdane_, int pret_, const std::string& marime_, const std::string & culoare_) : nrGhiozdane{nrGhiozdane_}, pret{pret_}, marime{marime_}, culoare{culoare_}
+int Ghiozdan::getGhiozdane() const
 {
-}
-int Ghiozdan::getGhiozdane()
-{
-
     return nrGhiozdane;
 }
-double Ghiozdan::getPret()
+
+
+Ghiozdan::Ghiozdan(int pret, const std::string &firma, int nrGhiozdane, const std::string &marime,
+                   const std::string &culoare) : Produs(pret, firma), nrGhiozdane(nrGhiozdane), marime(marime),
+                                                 culoare(culoare) {}
+
+void Ghiozdan::afisare(std::ostream &COUT) const
 {
-    return pret;
-}
-double Ghiozdan::valoareGhiozdane(){
-    return getPret() * getGhiozdane();
-}
-std::ostream& operator<<(std::ostream &COUT,const Ghiozdan &Ghiozdan1)
-{
-    COUT<<" Nr. Ghiozdane: "<<Ghiozdan1.nrGhiozdane<<std::endl;
-    COUT<<" Pret:"<<Ghiozdan1.pret<<" lei"<<std::endl;
-    COUT<<" Marime:"<<Ghiozdan1.marime<<std::endl;
-    COUT<<" Culoare:"<<Ghiozdan1.culoare<<std::endl;
-    return COUT;
+    COUT<<" Nr. Ghiozdane: "<<nrGhiozdane<<std::endl;
+    COUT<<" Marime:"<<marime<<std::endl;
+    COUT<<" Culoare:"<<culoare<<std::endl;
 }

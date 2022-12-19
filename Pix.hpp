@@ -8,18 +8,17 @@
 #include "Produs.hpp"
 class Pix:public Produs {
     int nrPixuri;
-    int pret;
     std::string marime;
     std::string culoare;
+    void afisare(std::ostream &COUT) const override;
 public:
-    Pix(int nrPixuri, int pret_, const std::string& marime_, const std::string& culoare_);
+    Pix(int pret, const std::string &firma, int nrPixuri, const std::string &marime, const std::string &culoare);
+
     Pix(const Pix& other);
     Pix& operator=(const Pix& other);
     ~Pix();
-    friend std::ostream& operator<<(std::ostream& COUT, const Pix& Pix1);
-    int getPixuri();
-    double getPret();
-    double valoarePixuri();
+    int getPixuri() const;
+    double valoare() const override {return getPret() * getPixuri();};
 };
 
 
