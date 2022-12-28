@@ -16,7 +16,9 @@ public:
 
     Pix(const Pix& other);
     Pix& operator=(const Pix& other);
-    ~Pix();
+
+
+
     int getPixuri() const;
     double valoare() const override {return getPret() * getPixuri();};
 };

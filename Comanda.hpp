@@ -12,7 +12,7 @@ class Comanda {
     Acuarele ac;
     Ghiozdan g;
     Caiet c;
-    double pretBon = 0;
+    double pretBon;
 
 public:
     Comanda(int nrComanda_, const Pix &p,const Acuarele &ac,const Ghiozdan &g,const Caiet &c);

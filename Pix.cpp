@@ -19,10 +19,6 @@ Pix&Pix::operator=(const Pix& other)
     return *this;
 }
 
-//destructor Pix
-Pix::~Pix()
-{
-}
 
 int Pix::getPixuri() const
 {
@@ -39,3 +35,5 @@ void Pix::afisare(std::ostream& COUT) const
     COUT <<"Marime:"<<marime<<std::endl;
     COUT <<"Culoare:"<<culoare<<std::endl;
 }
+
+

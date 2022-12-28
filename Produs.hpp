@@ -17,7 +17,9 @@ public:
     Produs(int pret, const std::string &firma);
     Produs();
     friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
-    virtual double valoare() const{return getPret();} ;
+    virtual double valoare() const{return getPret();}
+
+    virtual ~Produs();
     int getPret() const;
 };
 

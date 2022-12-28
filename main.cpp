@@ -6,6 +6,7 @@
 #include "Client.hpp"
 #include "Comanda.hpp"
 #include "Stoc_magazin.hpp"
+
 int main(){
 //prima comanda
     std::cout<<"\tPRIMA COMANDA"<<std::endl;

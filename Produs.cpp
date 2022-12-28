@@ -14,3 +14,7 @@ std::ostream& operator<<(std::ostream &COUT,const Produs &Produs1)
 int Produs::getPret() const {
     return pret;
 }
+
+Produs::~Produs() {
+
+}
