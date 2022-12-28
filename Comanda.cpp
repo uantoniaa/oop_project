@@ -2,7 +2,7 @@
 
 ///                   constructor de initializare pentru clasa Comanda
 Comanda::Comanda (int nrComanda_,const Pix &p_,const Acuarele &ac_,const Ghiozdan &g_,const Caiet &c_) : nrComanda{nrComanda_}, p{p_}, ac{ac_}, g{g_}, c{c_}
-{(*this).pretBon = 0;}
+{}
 
 
 void Comanda::set_pretBon()
