@@ -1,12 +1,13 @@
-// Created by Asus on 14/12/2022.
+//
+// Created by Asus on 02/01/2023.
 //
 
 #include "Client.hpp"
+
+#include <utility>
 ///                     constructor de initializare pentru clasa Client
 
-Client::Client(int id_client_, int puncte_fidelitate_, const std::string & metoda_plata_, const Comanda &cmd_) : id_client{id_client_}, puncte_fidelitate{puncte_fidelitate_},metoda_plata{metoda_plata_}, cmd{cmd_}
-{
-}
+
 void Client::client_fidel(){
 
     int cupon = 0;
@@ -28,3 +29,7 @@ std::ostream& operator<<(std::ostream &COUT,const Client &Client1)
     COUT<<" Puncte de fidelitate: "<<Client1.puncte_fidelitate<<std::endl;
     return COUT;
 }
+
+Client::Client(const int idClient, int puncteFidelitate, std::string metodaPlata, Comanda cmd) : id_client(
+        idClient), puncte_fidelitate(puncteFidelitate), metoda_plata(std::move(metodaPlata)), cmd(std::move(cmd)) {}
+

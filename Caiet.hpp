@@ -1,22 +1,25 @@
 //
-// Created by Asus on 14/12/2022.
+// Created by Asus on 30/12/2022.
 //
 
-#ifndef OOP_CAIET_HPP
-#define OOP_CAIET_HPP
-#include <iostream>
-#include <string>
+#ifndef UNTITLED6_CAIET_HPP
+#define UNTITLED6_CAIET_HPP
+
 #include "Produs.hpp"
-class Caiet:public Produs{
-    int nrCaiete;
+class Caiet:public Produs {
     std::string marime;
+    static int nrFileOblig;
+    int nrFile{};
     void afisare(std::ostream &COUT) const override;
+
 public:
-    Caiet(int pret, const std::string &firma, int nrCaiete, const std::string &marime);
+    Caiet(int pret, int nr, const std::string &firma, std::string marime);
 
+    void setNrFile(int nrFilePlus);
 
-    int getCaiete() const;
-    double valoare() const override{return getPret() * getCaiete();};
-};
+    int promotie() override;
 
-#endif //OOP_CAIET_HPP
+}
+;
+
+#endif //UNTITLED6_CAIET_HPP

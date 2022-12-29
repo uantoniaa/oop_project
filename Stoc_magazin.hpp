@@ -1,17 +1,28 @@
+//
+// Created by Asus on 02/01/2023.
+//
+
 #ifndef OOP_STOC_MAGAZIN_HPP
 #define OOP_STOC_MAGAZIN_HPP
 #include <iostream>
 #include <string>
 #include "Comanda.hpp"
+#include "Pix.hpp"
+#include "Caiet.hpp"
+#include "Ghiozdan.hpp"
 class Stoc_magazin{
     int nrPixuri_stoc;
-    int nrAcuarele_stoc;
     int nrGhiozdane_stoc;
     int nrCaiete_stoc;
     int sumaInitiala; // banii care sunt in magazin inainte de comanda
+    Pix p;
+    Caiet c;
+    Ghiozdan g;
     Comanda cmd;
 public:
-    Stoc_magazin(int nrPixuri_stoc_, int nrAcuarele_stoc_, int nrGhiozdane_stoc_, int nrCaiete_stoc_, int sumaInitiala_, const Comanda &cmd);
+    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, int sumaInitiala, Pix p,
+                 Caiet c, Ghiozdan g, Comanda cmd);
+
     //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda
     void stoc_ramas();
     //functie care calculeaza suma de bani din magazin, de dupa comanda si
@@ -21,4 +32,4 @@ public:
 
 };
 
-#endif //OOP_STOC_MAGAZIN_HPP
+#endif //UNTITLED6_STOC_MAGAZIN_HPP

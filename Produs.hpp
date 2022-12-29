@@ -1,27 +1,30 @@
 //
-// Created by Asus on 17/12/2022.
+// Created by Asus on 30/12/2022.
 //
 
-#ifndef OOP_PRODUS_HPP
-#define OOP_PRODUS_HPP
+#ifndef UNTITLED6_PRODUS_HPP
+#define UNTITLED6_PRODUS_HPP
 
 #include <iostream>
 #include <string>
-
+#include <memory>
 class Produs {
 private:
-    int pret;
+    int pret{};
+protected:
+    int nr;
+private:
     std::string firma;
     virtual void afisare(std::ostream &) const;
 public:
-    Produs(int pret, const std::string &firma);
     Produs();
+    Produs(int pret, int nr, std::string firma);
     friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
-    virtual double valoare() const{return getPret();}
-
-    virtual ~Produs();
+    virtual int promotie();
+    double valoare() const;
+    int getNr() const ;
     int getPret() const;
+    virtual ~Produs();
 };
 
-
-#endif //OOP_PRODUS_HPP
+#endif //UNTITLED6_PRODUS_HPP

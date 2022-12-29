@@ -1,39 +1,21 @@
 //
-// Created by Asus on 14/12/2022.
+// Created by Asus on 30/12/2022.
 //
 
 #include "Pix.hpp"
 
+#include <utility>
 
-//constructor de copiere pentru clasa Pix
-Pix::Pix(const Pix& other): Produs(), nrPixuri{other.nrPixuri}, marime{other.marime}, culoare{other.culoare}
-{
+Pix::Pix(int pret, int nr, const std::string &firma, std::string specificatie, std::string culoarePasta) : Produs(
+        pret, nr, firma), specificatie(std::move(specificatie)), culoarePasta(std::move(culoarePasta)) {}
+void Pix::afisare(std::ostream &COUT) const {
+    COUT<< "Specificatie: " << specificatie << "\n"<< "Culoare pasta: " <<culoarePasta << "\n";
 }
 
-//operator= copiere Pix
-Pix&Pix::operator=(const Pix& other)
-{
-    (*this).nrPixuri = other.nrPixuri;
-    (*this).marime = other.marime;
-    (*this).culoare=other.culoare;
-    return *this;
+int Pix::promotie()  {
+    if(nr >= 30) {
+        nr += 1;
+        std::cout<<"Acum, numarul pixurilor este cu 1 mai mare, datorita promotiei, fiind "<<nr<<"."<<std::endl<<std::endl;
+    }
+    return nr;
 }
-
-
-int Pix::getPixuri() const
-{
-    return nrPixuri;
-}
-
-
-Pix::Pix(int pret, const std::string &firma, int nrPixuri, const std::string &marime, const std::string &culoare)
-        : Produs(pret, firma), nrPixuri(nrPixuri), marime(marime), culoare(culoare) {}
-
-void Pix::afisare(std::ostream& COUT) const
-{
-    COUT<<"Nr. pixuri: "<<nrPixuri<<std::endl;
-    COUT <<"Marime:"<<marime<<std::endl;
-    COUT <<"Culoare:"<<culoare<<std::endl;
-}
-
-

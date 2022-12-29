@@ -1,27 +1,20 @@
-// Created by Asus on 14/12/2022.
+//
+// Created by Asus on 30/12/2022.
 //
 
-#ifndef OOP_PIX_HPP
-#define OOP_PIX_HPP
-#include <iostream>
-#include <string>
+#ifndef UNTITLED6_PIX_HPP
+#define UNTITLED6_PIX_HPP
 #include "Produs.hpp"
+
 class Pix:public Produs {
-    int nrPixuri;
-    std::string marime;
-    std::string culoare;
+    std::string specificatie; //prin specificatie se intelege cva pixurile pot fi cu roller, cu mecanism si grip, cu accente cromate, etc.
+    std::string culoarePasta;
     void afisare(std::ostream &COUT) const override;
 public:
-    Pix(int pret, const std::string &firma, int nrPixuri, const std::string &marime, const std::string &culoare);
+    Pix(int pret, int nr, const std::string &firma, std::string specificatie, std::string culoarePasta);
+    int promotie() override;
 
-    Pix(const Pix& other);
-    Pix& operator=(const Pix& other);
-
-
-
-    int getPixuri() const;
-    double valoare() const override {return getPret() * getPixuri();};
 };
 
 
-#endif //OOP_PIX_HPP
+#endif //UNTITLED6_PIX_HPP

@@ -1,11 +1,18 @@
+//
+// Created by Asus on 30/12/2022.
+//
+
 #include "Produs.hpp"
+
+#include <utility>
 void Produs::afisare(std::ostream &) const {}
-Produs::Produs(int pret, const std::string &firma) : pret(pret), firma(firma) {}
-Produs::Produs() {}
+Produs::Produs(int pret, int nr, std::string firma) : pret(pret), nr(nr), firma(std::move(firma)) {}
+Produs::Produs() = default;
 std::ostream& operator<<(std::ostream &COUT,const Produs &Produs1)
 {
-    COUT << "Pret:"<<Produs1.pret<<" lei"<<std::endl;
-    COUT << "Firma:"<<Produs1.firma<<std::endl;
+    COUT << "Pret:"<<Produs1.pret<<" lei"<<std::endl
+         <<"Numar: "<<Produs1.nr<<std::endl
+         << "Firma:"<<Produs1.firma<<std::endl;
     Produs1.afisare(COUT);
     COUT<< "\n";
     return COUT;
@@ -14,7 +21,20 @@ std::ostream& operator<<(std::ostream &COUT,const Produs &Produs1)
 int Produs::getPret() const {
     return pret;
 }
-
-Produs::~Produs() {
-
+int Produs::getNr() const {
+    return nr;
 }
+
+double Produs::valoare()  const {
+    return getNr() * getPret();
+}
+
+Produs::~Produs() = default;
+
+int Produs::promotie() {
+    return 0;
+}
+
+
+
+
