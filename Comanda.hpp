@@ -11,7 +11,7 @@
 class Comanda:public Produs {
     int nrComanda;
     std::vector<Produs> produse;
-    double pretBon{};
+    double pretBon;
 public:
     Comanda(int nrComanda, std::vector<Produs> produse);
 

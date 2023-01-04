@@ -9,7 +9,7 @@
 class Caiet:public Produs {
     std::string marime;
     static int nrFileOblig;
-    int nrFile{};
+    int nrFile;
     void afisare(std::ostream &COUT) const override;
 
 public:

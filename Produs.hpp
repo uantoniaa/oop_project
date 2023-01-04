@@ -10,7 +10,7 @@
 #include <memory>
 class Produs {
 private:
-    int pret{};
+    int pret;
 protected:
     int nr = 0;
 private:
