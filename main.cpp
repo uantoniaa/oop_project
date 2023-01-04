@@ -44,7 +44,7 @@ int main(){
     std::cout<<"Cel mai scump produs este cel cu pretul de "<<produse[n-1].getPret()<<" de lei."<<std::endl<<std::endl;
 
     std::cout<< "Date client 1: " << std::endl;
-    Client cl1(155,12, "cash", cmd1);
+    Client cl1(155,18, "cash", cmd1);
     try{
     cl1.client_fidel();}
     catch(eroare_cupon &error)
