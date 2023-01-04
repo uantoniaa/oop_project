@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include "Ghiozdan.hpp"
 #include "Pix.hpp"
 #include "Caiet.hpp"
@@ -8,7 +7,7 @@
 #include "Client.hpp"
 #include "Comanda.hpp"
 #include "Stoc_magazin.hpp"
-
+#include "Exceptii.hpp"
 double cmp(const Produs &pr1, const Produs &pr2) {
     return pr1.getPret()<pr2.getPret();
 }
@@ -46,7 +45,10 @@ int main(){
 
     std::cout<< "Date client 1: " << std::endl;
     Client cl1(155,12, "cash", cmd1);
-    cl1.client_fidel();
+    try{
+    cl1.client_fidel();}
+    catch(eroare_cupon &error)
+    {std::cout<<error.what()<<"\n";}
     std::cout<<cl1<<std::endl;
 
     std::cout<< "Date stoc magazin: " << std::endl;

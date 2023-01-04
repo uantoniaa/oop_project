@@ -3,7 +3,7 @@
 //
 
 #include "Client.hpp"
-
+#include "Exceptii.hpp"
 #include <utility>
 ///                     constructor de initializare pentru clasa Client
 
@@ -16,10 +16,14 @@ void Client::client_fidel(){
     if(puncte_fidelitate >= 15) //la 15 puncte de fidelitate, clientul castiga un cupon
         cupon++;
     int punctePanaLaCupon = 15 - puncte_fidelitate;
+    std::string pctcp = std::to_string(punctePanaLaCupon);
     if(cupon >=1 )
         std::cout<<" Clientul isi poate alege un cadou. "<<std::endl;
-    else
-        std::cout<<" Clientului ii mai trebuie "<<punctePanaLaCupon<<" puncte de fidelitate pana isi poate alege un cadou"<<std::endl;
+    if (cupon == 0) {
+        throw eroare_cupon("Clientului ii mai trebuie " + pctcp+ " puncte pana va primi un cupon.");
+        // else
+        // std::cout<<" Clientului ii mai trebuie "<<punctePanaLaCupon<<" puncte de fidelitate pana isi poate alege un cadou"<<std::endl;
+    }
 }
 std::ostream& operator<<(std::ostream &COUT,const Client &Client1)
 {
