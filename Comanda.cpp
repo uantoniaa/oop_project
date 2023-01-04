@@ -1,12 +1,14 @@
 #include "Comanda.hpp"
-
+#include "Exceptii.hpp"
 #include <utility>
 Comanda::Comanda(int nrComanda,  std::vector<Produs>produse) : nrComanda(nrComanda), produse(std::move(produse)){}
 
 void Comanda::set_pretBon() {
-    for(auto & i : produse)
+    for(auto & i : produse) {
+        if(produse.size() == 0)
+            throw eroare_produse();
         pretBon += i.valoare();
-
+    }
     if (pretBon > 150) //calculeaza reducerea de 15%, in cazul in care bonul este mai mare de 150 de lei
         pretBon = pretBon - (0.15 * pretBon);
 }

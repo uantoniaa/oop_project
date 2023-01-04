@@ -3,7 +3,7 @@
 //
 
 #include "Stoc_magazin.hpp"
-
+#include "Exceptii.hpp"
 #include <utility>
 
 
@@ -28,6 +28,8 @@ void Stoc_magazin::sumaDupaVanzari(){
     double pretB = cmd.get_pretBon();
     double sumadv = sumaInitiala + pretB;
     std::cout<<"Suma de bani de dupa vanzari este de: "<<sumadv<<" lei."<<std::endl;
+    if(sumaInitiala == sumadv)
+        throw eroare_vanzari();
     double procentVanzare = (100 * pretB) / sumadv;
     std::cout<<"Suma de bani din magazin a crescut fata de ziua precedenta cu un procent de: "<<procentVanzare<<"%."<<std::endl;
 }

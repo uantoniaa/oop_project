@@ -20,7 +20,7 @@ void Client::client_fidel(){
     if(cupon >=1 )
         std::cout<<" Clientul isi poate alege un cadou. "<<std::endl;
     if (cupon == 0) {
-        throw eroare_cupon("Clientului ii mai trebuie " + pctcp+ " puncte pana va primi un cupon.");
+        throw eroare_cupon("Clientului ii mai trebuie " + pctcp + " puncte pana va primi un cupon.");
         // else
         // std::cout<<" Clientului ii mai trebuie "<<punctePanaLaCupon<<" puncte de fidelitate pana isi poate alege un cadou"<<std::endl;
     }

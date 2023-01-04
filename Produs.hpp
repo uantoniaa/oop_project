@@ -12,7 +12,7 @@ class Produs {
 private:
     int pret{};
 protected:
-    int nr = 0;
+    int nr{};
 private:
     std::string firma;
     virtual void afisare(std::ostream &) const;
