@@ -37,3 +37,13 @@ std::ostream& operator<<(std::ostream &COUT,const Client &Client1)
 Client::Client(const int idClient, int puncteFidelitate, std::string metodaPlata, Comanda cmd) : id_client(
         idClient), puncte_fidelitate(puncteFidelitate), metoda_plata(std::move(metodaPlata)), cmd(std::move(cmd)) {}
 
+Client &Client::operator=(const Client &other) {
+    id_client = other.id_client;
+    puncte_fidelitate = other.puncte_fidelitate;
+    metoda_plata = other.metoda_plata;
+    cmd = other.cmd;
+    return *this;
+}
+
+Client::Client(const Client &other):id_client(other.id_client), puncte_fidelitate(other.puncte_fidelitate), metoda_plata(other.metoda_plata), cmd(other.cmd) {}
+

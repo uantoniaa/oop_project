@@ -22,14 +22,20 @@ class Stoc_magazin{
 public:
     Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, int sumaInitiala, Pix p,
                  Caiet c, Ghiozdan g, Comanda cmd);
-
+    Stoc_magazin(const Stoc_magazin &other);
+    Stoc_magazin &operator=(const Stoc_magazin &other);
     //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda
     void stoc_ramas();
     //functie care calculeaza suma de bani din magazin, de dupa comanda si
     //cu cat la suta a crescut suma de bani din magazin fata de ziua precedenta
-    void sumaDupaVanzari();
+    double sumaDupaVanzari();
     friend std::ostream& operator<<(std::ostream& COUT,const Stoc_magazin &Stoc_magazin1);
 
+    int getNrPixuriStoc() const;
+
+    int getNrGhiozdaneStoc() const;
+
+    int getNrCaieteStoc() const;
 };
 
 #endif //UNTITLED6_STOC_MAGAZIN_HPP

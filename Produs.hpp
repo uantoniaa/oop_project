@@ -19,6 +19,8 @@ private:
 public:
     Produs();
     Produs(int pret, int nr, std::string firma);
+    Produs(const Produs &other);
+    Produs &operator=(const Produs &other);
     friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
     virtual int promotie();
     double valoare() const;

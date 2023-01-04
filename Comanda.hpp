@@ -18,6 +18,7 @@ public:
     void set_pretBon();
     double get_pretBon() const;
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
+
 };
 
 

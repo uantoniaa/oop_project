@@ -35,6 +35,15 @@ int Produs::promotie() {
     return 0;
 }
 
+Produs &Produs::operator=(const Produs &other) {
+    pret=other.pret;
+    nr=other.nr;
+    firma=other.firma;
+    return *this;
+}
+
+Produs::Produs(const Produs &other): pret(other.pret), nr(other.nr), firma(other.firma)  {}
+
 
 
 

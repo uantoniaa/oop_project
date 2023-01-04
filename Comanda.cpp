@@ -22,3 +22,5 @@ std::ostream& operator<<(std::ostream &COUT,const Comanda &Comanda1) {
     COUT << " Pret bon: " << Comanda1.pretBon << " lei" << std::endl;
     return COUT;
 }
+
+
