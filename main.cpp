@@ -34,10 +34,11 @@ int main() {
     c1.setNrFile(45);
     std::cout << c1 << std::endl;
     c1.promotie();
-
+    try{
     produse.push_back(p1);
     produse.push_back(c1);
-    produse.push_back(g1);
+    produse.push_back(g1);}
+    catch (eroare_produse &error) { std::cout << error.what() << std::endl; }
     Comanda cmd1{18, produse};
     cmd1.set_pretBon();
     std::cout << cmd1 << std::endl;
@@ -52,7 +53,7 @@ int main() {
     try {
         cl1.client_fidel();
     }
-    catch (eroare_cupon &error) { std::cout << error.what() << "\n"; }
+    catch (eroare_cupon &error) { std::cout << error.what() << std::endl; }
     std::cout << cl1 << std::endl;
 
     std::cout << "Date stoc magazin: " << std::endl;
@@ -61,6 +62,6 @@ int main() {
     std::cout << "Stoc magazin dupa prima comanda:" << std::endl;
     St1.stoc_ramas();
     try { St1.sumaDupaVanzari(); }
-    catch (eroare_vanzari &error) { std::cout << error.what() << "\n"; }
+    catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
     return 0;
 }
