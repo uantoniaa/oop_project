@@ -7,7 +7,7 @@
 #include "Produs.hpp"
 #include <memory>
 class Pix:public Produs {
-    std::string specificatie; //prin specificatie se intelege cva pixurile pot fi cu roller, cu mecanism si grip, cu accente cromate, etc.
+    std::string specificatie; //prin specificatie se intelege ca pixurile pot fi cu roller, cu mecanism si grip, cu accente cromate, etc.
     std::string culoarePasta;
     void afisare(std::ostream &COUT) const override;
 public:
