@@ -15,10 +15,12 @@ class eroare_cupon : public eroare_clase {
 public:
     explicit eroare_cupon(const std::string &var);
 };
+//trebuie ca suma de dupa vanzari sa fie mai mare decat cea de dinainte de vanzari
 class eroare_vanzari : public eroare_clase {
 public:
     explicit eroare_vanzari();
 };
+//trebuie ca vectorul de produse sa contina minim un element
 class eroare_produse : public eroare_clase {
 public:
     explicit eroare_produse();

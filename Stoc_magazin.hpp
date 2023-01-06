@@ -14,13 +14,14 @@ class Stoc_magazin{
     int nrPixuri_stoc;
     int nrGhiozdane_stoc;
     int nrCaiete_stoc;
-    int sumaInitiala; // banii care sunt in magazin inainte de comanda
+    double sumaInitiala; // banii care sunt in magazin inainte de comanda
     Pix p;
     Caiet c;
     Ghiozdan g;
     Comanda cmd;
 public:
-    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, int sumaInitiala, Pix p,
+
+    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Pix p,
                  Caiet c, Ghiozdan g, Comanda cmd);
     Stoc_magazin(const Stoc_magazin &other);
     Stoc_magazin &operator=(const Stoc_magazin &other);
@@ -36,6 +37,7 @@ public:
     int getNrGhiozdaneStoc() const;
 
     int getNrCaieteStoc() const;
+
 };
 
 #endif //UNTITLED6_STOC_MAGAZIN_HPP

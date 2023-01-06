@@ -8,17 +8,17 @@
 #include <vector>
 
 
-class Comanda:public Produs {
+class Comanda{
     int nrComanda;
-    std::vector<Produs> produse;
+    std::vector<Produs*> produse;
     double pretBon{};
 public:
-    Comanda(int nrComanda, std::vector<Produs> produse);
+    Comanda();
+    Comanda(int nrComanda, std::vector<Produs*> produse);
 
     void set_pretBon();
     double get_pretBon() const;
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
-
 };
 
 

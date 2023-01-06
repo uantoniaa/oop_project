@@ -5,7 +5,7 @@
 #ifndef UNTITLED6_PIX_HPP
 #define UNTITLED6_PIX_HPP
 #include "Produs.hpp"
-
+#include <memory>
 class Pix:public Produs {
     std::string specificatie; //prin specificatie se intelege cva pixurile pot fi cu roller, cu mecanism si grip, cu accente cromate, etc.
     std::string culoarePasta;
@@ -13,8 +13,10 @@ class Pix:public Produs {
 public:
     Pix(int pret, int nr, const std::string &firma, std::string specificatie, std::string culoarePasta);
     int promotie() override;
-
-};
+    std::shared_ptr<Produs> clone() const override {
+        return std::make_shared<Pix>(*this);
+    }
+    };
 
 
 #endif //UNTITLED6_PIX_HPP

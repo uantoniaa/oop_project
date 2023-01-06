@@ -4,7 +4,7 @@
 
 #ifndef UNTITLED6_CAIET_HPP
 #define UNTITLED6_CAIET_HPP
-
+#include <memory>
 #include "Produs.hpp"
 class Caiet:public Produs {
     std::string marime;
@@ -16,9 +16,11 @@ public:
     Caiet(int pret, int nr, const std::string &firma, std::string marime);
 
     void setNrFile(int nrFilePlus);
+    std::shared_ptr<Produs> clone() const override {
+        return std::make_shared<Caiet>(*this);
+    }
 
     int promotie() override;
-
 }
 ;
 

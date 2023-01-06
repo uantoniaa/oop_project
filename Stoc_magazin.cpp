@@ -38,7 +38,7 @@ double Stoc_magazin::sumaDupaVanzari() {
     return sumadv;
 }
 
-Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, int sumaInitiala, Pix p,
+Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Pix p,
                            Caiet c, Ghiozdan g, Comanda cmd) : nrPixuri_stoc(nrPixuriStoc),
                                                                nrGhiozdane_stoc(nrGhiozdaneStoc),
                                                                nrCaiete_stoc(nrCaieteStoc),
@@ -77,3 +77,5 @@ int Stoc_magazin::getNrGhiozdaneStoc() const {
 int Stoc_magazin::getNrCaieteStoc() const {
     return nrCaiete_stoc;
 }
+
+

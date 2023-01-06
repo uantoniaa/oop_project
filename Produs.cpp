@@ -7,7 +7,7 @@
 #include <utility>
 void Produs::afisare(std::ostream &) const {}
 Produs::Produs(int pret, int nr, std::string firma) : pret(pret), nr(nr), firma(std::move(firma)) {}
-Produs::Produs() = default;
+Produs::Produs() {}
 std::ostream& operator<<(std::ostream &COUT,const Produs &Produs1)
 {
     COUT << "Pret:"<<Produs1.pret<<" lei"<<std::endl
@@ -29,7 +29,7 @@ double Produs::valoare()  const {
     return getNr() * getPret();
 }
 
-Produs::~Produs() = default;
+Produs::~Produs(){}
 
 int Produs::promotie() {
     return 0;
@@ -43,6 +43,14 @@ Produs &Produs::operator=(const Produs &other) {
 }
 
 Produs::Produs(const Produs &other): pret(other.pret), nr(other.nr), firma(other.firma)  {}
+
+const std::string &Produs::getFirma() const {
+    return firma;
+}
+
+std::shared_ptr<Produs> Produs::clone() const {
+    return {};
+}
 
 
 
