@@ -14,9 +14,9 @@ void Ghiozdan::afisare(std::ostream &COUT) const {
 }
 
 int Ghiozdan::promotie() {
-    if (nr >= 10) {
-        nr += 1;
-        std::cout << "Acum, numarul ghiozdanelor este cu 1 mai mare, datorita promotiei, fiind " << nr << "."
+    if (nr >= 12 && getPret() >= 80) {
+        nr += 2;
+        std::cout << "Acum, numarul ghiozdanelor este cu 2 mai mare, datorita promotiei, fiind " << nr << "."
                   << std::endl;
     }
     return nr;

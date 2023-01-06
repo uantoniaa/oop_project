@@ -13,7 +13,6 @@
 double cmp(Produs *pr1, Produs *pr2) {
     return pr1->getPret() < pr2->getPret();
 }
-
 int main() {
     //prima comanda
     std::cout << "\tPRIMA COMANDA" << std::endl;
@@ -29,12 +28,14 @@ int main() {
     auto* pr2 = dynamic_cast<Produs*>(&g1);
     std::cout << g1 << std::endl;
     g1.promotie();
+
     std::cout << "Date Caiet prima comanda:" << std::endl;
     Caiet c1{12, 4, "Scheinder", "A4"};
     auto* pr3 = dynamic_cast<Produs*>(&c1);
     c1.setNrFile(45);
     std::cout << c1 << std::endl;
     c1.promotie();
+
     try{
     produse.push_back(pr1);
     produse.push_back(pr2);
@@ -115,6 +116,7 @@ int main() {
     St2.stoc_ramas();
     try { St2.sumaDupaVanzari(); }
     catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
-
+    auto vec3 = {pr1->clone(), pr2->clone(), pr3->clone(), pr4->clone(), pr5->clone(), pr7->clone()};
+    //sa adaug
     return 0;
 }

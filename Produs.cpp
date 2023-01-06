@@ -31,9 +31,7 @@ double Produs::valoare()  const {
 
 Produs::~Produs(){}
 
-int Produs::promotie() {
-    return 0;
-}
+
 
 Produs &Produs::operator=(const Produs &other) {
     pret=other.pret;
@@ -44,12 +42,14 @@ Produs &Produs::operator=(const Produs &other) {
 
 Produs::Produs(const Produs &other): pret(other.pret), nr(other.nr), firma(other.firma)  {}
 
-const std::string &Produs::getFirma() const {
-    return firma;
-}
+
 
 std::shared_ptr<Produs> Produs::clone() const {
     return {};
+}
+
+const std::string &Produs::getFirma() const {
+    return firma;
 }
 
 

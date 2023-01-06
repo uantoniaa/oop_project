@@ -22,11 +22,11 @@ public:
     Produs();
     Produs(int pret, int nr, std::string firma);
     virtual std::shared_ptr<Produs> clone() const = 0;
+    friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
+    virtual int promotie()=0;
+
     const std::string &getFirma() const;
 
-
-    friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
-    virtual int promotie();
     double valoare() const;
     int getNr() const ;
     int getPret() const;

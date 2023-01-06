@@ -13,9 +13,9 @@ void Pix::afisare(std::ostream &COUT) const {
 }
 
 int Pix::promotie()  {
-    if(nr >= 30) {
-        nr += 1;
-        std::cout<<"Acum, numarul pixurilor este cu 1 mai mare, datorita promotiei, fiind "<<nr<<"."<<std::endl<<std::endl;
+    if(nr >= 30 && getFirma() == "Bic") {
+        nr += 6;
+        std::cout<<"Acum, numarul pixurilor este cu 6  mai mare, datorita promotiei, fiind "<<nr<<"."<<std::endl<<std::endl;
     }
     return nr;
 }
