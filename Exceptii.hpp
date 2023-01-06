@@ -20,10 +20,6 @@ class eroare_vanzari : public eroare_clase {
 public:
     explicit eroare_vanzari();
 };
-//trebuie ca vectorul de produse sa contina minim un element
-class eroare_produse : public eroare_clase {
-public:
-    explicit eroare_produse();
-};
+
 
 #endif //OOP_EXCEPTII_HPP

@@ -39,11 +39,11 @@ double Stoc_magazin::sumaDupaVanzari() {
 }
 
 Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Pix p,
-                           Caiet c, Ghiozdan g, Comanda cmd) : nrPixuri_stoc(nrPixuriStoc),
+                           Caiet c, Ghiozdan g, Comanda cmd, std::vector<Produs*> produse) : nrPixuri_stoc(nrPixuriStoc),
                                                                nrGhiozdane_stoc(nrGhiozdaneStoc),
                                                                nrCaiete_stoc(nrCaieteStoc),
                                                                sumaInitiala(sumaInitiala), p(std::move(p)),
-                                                               c(std::move(c)), g(std::move(g)), cmd(std::move(cmd)) {}
+                                                               c(std::move(c)), g(std::move(g)), cmd(std::move(cmd)), produse(std::move(produse)){}
 
 Stoc_magazin &Stoc_magazin::operator=(const Stoc_magazin &other) {
     nrCaiete_stoc = other.nrCaiete_stoc;
@@ -54,6 +54,7 @@ Stoc_magazin &Stoc_magazin::operator=(const Stoc_magazin &other) {
     g = other.g;
     c = other.c;
     cmd = other.cmd;
+    produse = other.produse;
     return *this;
 }
 
@@ -64,7 +65,8 @@ Stoc_magazin::Stoc_magazin(const Stoc_magazin &other) :
         p(other.p),
         c(other.c),
         g(other.g),
-        cmd(other.cmd) {}
+        cmd(other.cmd),
+        produse(other.produse){}
 
 int Stoc_magazin::getNrPixuriStoc() const {
     return nrPixuri_stoc;
@@ -78,4 +80,12 @@ int Stoc_magazin::getNrCaieteStoc() const {
     return nrCaiete_stoc;
 }
 
-
+void Stoc_magazin::cautaProdus(const std::string &firma) {
+    std::size_t found;
+    for (auto &produs: produse) {
+        found = produs->getFirma().find(firma);
+        if (found != std::string::npos) {
+            std::cout << "Produsul cautat apartine firmei "<< produs->getFirma() << ".";
+        }
+    }
+}

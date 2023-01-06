@@ -6,8 +6,6 @@
 
 void Comanda::set_pretBon() {
     for(auto & i : produse) {
-        if(produse.size() == 0)
-            throw eroare_produse();
         pretBon += i->valoare();
     }
     if (pretBon > 150) //calculeaza reducerea de 15%, in cazul in care bonul este mai mare de 150 de lei

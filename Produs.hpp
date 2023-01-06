@@ -13,8 +13,8 @@ private:
     int pret{};
 protected:
     int nr{};
-    Produs &operator=(const Produs &other);
-    Produs(const Produs &other);
+    Produs &operator=(const Produs &other) = default;
+    Produs(const Produs &other) = default;
 private:
     std::string firma;
     virtual void afisare(std::ostream &) const;
@@ -24,7 +24,7 @@ public:
     virtual std::shared_ptr<Produs> clone() const = 0;
     friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
     virtual int promotie()=0;
-
+    void cautaProdus(const std::string& firma);
     const std::string &getFirma() const;
 
     double valoare() const;

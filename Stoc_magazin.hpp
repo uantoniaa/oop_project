@@ -19,17 +19,19 @@ class Stoc_magazin{
     Caiet c;
     Ghiozdan g;
     Comanda cmd;
+    std::vector<Produs*> produse;
 public:
 
     Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Pix p,
-                 Caiet c, Ghiozdan g, Comanda cmd);
+                 Caiet c, Ghiozdan g, Comanda cmd, std::vector<Produs*> produse);
     Stoc_magazin(const Stoc_magazin &other);
-    Stoc_magazin &operator=(const Stoc_magazin &other);
+    Stoc_magazin &operator=(const Stoc_magazin &other); //o sa am un vector de pointeri, deci are rost cc/op=
     //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda
     void stoc_ramas();
     //functie care calculeaza suma de bani din magazin, de dupa comanda si
     //cu cat la suta a crescut suma de bani din magazin fata de ziua precedenta
     double sumaDupaVanzari();
+    void cautaProdus(const std::string& firma);
     friend std::ostream& operator<<(std::ostream& COUT,const Stoc_magazin &Stoc_magazin1);
 
     int getNrPixuriStoc() const;

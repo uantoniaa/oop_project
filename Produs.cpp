@@ -33,14 +33,14 @@ Produs::~Produs(){}
 
 
 
-Produs &Produs::operator=(const Produs &other) {
-    pret=other.pret;
-    nr=other.nr;
-    firma=other.firma;
-    return *this;
-}
+//Produs &Produs::operator=(const Produs &other) {
+//    pret=other.pret;
+//    nr=other.nr;
+//    firma=other.firma;
+//    return *this;
+//}
 
-Produs::Produs(const Produs &other): pret(other.pret), nr(other.nr), firma(other.firma)  {}
+//Produs::Produs(const Produs &other): pret(other.pret), nr(other.nr), firma(other.firma)  {}
 
 
 
@@ -51,7 +51,6 @@ std::shared_ptr<Produs> Produs::clone() const {
 const std::string &Produs::getFirma() const {
     return firma;
 }
-
 
 
 
