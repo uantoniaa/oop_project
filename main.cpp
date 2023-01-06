@@ -117,6 +117,7 @@ int main() {
     try { St2.sumaDupaVanzari(); }
     catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
     auto vec3 = {pr1->clone(), pr2->clone(), pr3->clone(), pr4->clone(), pr5->clone(), pr7->clone()};
-    //sa adaug
+    for (auto it = vec3.begin(); it != vec3.end(); ++it) {
+        std::cout << (*it)->getPret() <<" ";} // de completat
     return 0;
 }
