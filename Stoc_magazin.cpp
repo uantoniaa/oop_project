@@ -81,11 +81,11 @@ int Stoc_magazin::getNrCaieteStoc() const {
 }
 
 void Stoc_magazin::cautaProdus(const std::string &firma) {
-    std::size_t found;
     for (auto &produs: produse) {
+        std::size_t found;
         found = produs->getFirma().find(firma);
         if (found != std::string::npos) {
-            std::cout << "Produsul cautat apartine firmei "<< produs->getFirma() << ".";
+            std::cout << "Produsul cautat apartine firmei "<< produs->getFirma() << "."<<std::endl;
         }
     }
 }
