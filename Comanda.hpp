@@ -15,10 +15,13 @@ class Comanda{
 public:
     Comanda();
     Comanda(int nrComanda, std::vector<Produs*> produse);
-
-    void set_pretBon();
-    double get_pretBon() const;
+    double calculareBon();
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &Comanda1);
+    void afisareProdusScump();
+
+    double getPretBon() const;
+
+    static double cmpr(Produs *pr1, Produs *pr2);
 };
 
 

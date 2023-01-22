@@ -11,14 +11,14 @@ int Client::id_cnt = 100;
 void Client::client_fidel(){
 
     int cupon = 0;
-    if(cmd.get_pretBon() >=25)
+    if(cmd.calculareBon() >=25)
         puncte_fidelitate++;
     if(puncte_fidelitate >= 15) //la 15 puncte de fidelitate, clientul castiga un cupon
         cupon++;
     int punctePanaLaCupon = 15 - puncte_fidelitate;
     std::string pctcp = std::to_string(punctePanaLaCupon);
     if(cupon >=1 )
-        std::cout<<" Clientul isi poate alege un cadou. "<<std::endl;
+        std::cout<<"Clientul isi poate alege un cadou. "<<std::endl;
     if (cupon == 0) {
         throw eroare_cupon("Clientului ii mai trebuie " + pctcp + " puncte pana va primi un cupon.");
         // else

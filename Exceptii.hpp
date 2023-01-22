@@ -21,5 +21,9 @@ public:
     explicit eroare_vanzari();
 };
 
+class eroare_cautare_produs : public eroare_clase {
+public:
+    explicit eroare_cautare_produs();
+};
 
 #endif //OOP_EXCEPTII_HPP

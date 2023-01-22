@@ -27,7 +27,7 @@ void Stoc_magazin::stoc_ramas() {
 }
 
 double Stoc_magazin::sumaDupaVanzari() {
-    double pretB = cmd.get_pretBon();
+    double pretB = cmd.getPretBon();
     double sumadv = sumaInitiala + pretB;
     std::cout << "Suma de bani de dupa vanzari este de: " << sumadv << " lei." << std::endl;
     if (sumaInitiala == sumadv)
@@ -39,11 +39,20 @@ double Stoc_magazin::sumaDupaVanzari() {
 }
 
 Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Pix p,
-                           Caiet c, Ghiozdan g, Comanda cmd, std::vector<Produs*> produse) : nrPixuri_stoc(nrPixuriStoc),
-                                                               nrGhiozdane_stoc(nrGhiozdaneStoc),
-                                                               nrCaiete_stoc(nrCaieteStoc),
-                                                               sumaInitiala(sumaInitiala), p(std::move(p)),
-                                                               c(std::move(c)), g(std::move(g)), cmd(std::move(cmd)), produse(std::move(produse)){}
+                           Caiet c, Ghiozdan g, Comanda cmd, std::vector<Produs *> produse) : nrPixuri_stoc(
+        nrPixuriStoc),
+                                                                                              nrGhiozdane_stoc(
+                                                                                                      nrGhiozdaneStoc),
+                                                                                              nrCaiete_stoc(
+                                                                                                      nrCaieteStoc),
+                                                                                              sumaInitiala(
+                                                                                                      sumaInitiala),
+                                                                                              p(std::move(p)),
+                                                                                              c(std::move(c)),
+                                                                                              g(std::move(g)),
+                                                                                              cmd(std::move(cmd)),
+                                                                                              produse(std::move(
+                                                                                                      produse)) {}
 
 Stoc_magazin &Stoc_magazin::operator=(const Stoc_magazin &other) {
     nrCaiete_stoc = other.nrCaiete_stoc;
@@ -66,7 +75,7 @@ Stoc_magazin::Stoc_magazin(const Stoc_magazin &other) :
         c(other.c),
         g(other.g),
         cmd(other.cmd),
-        produse(other.produse){}
+        produse(other.produse) {}
 
 int Stoc_magazin::getNrPixuriStoc() const {
     return nrPixuri_stoc;
@@ -85,7 +94,10 @@ void Stoc_magazin::cautaProdus(const std::string &firma) {
         std::size_t found;
         found = produs->getFirma().find(firma);
         if (found != std::string::npos) {
-            std::cout << "Produsul cautat apartine firmei "<< produs->getFirma() << "."<<std::endl;
+            std::cout << "Produsul cautat apartine firmei " << produs->getFirma() << "." << std::endl;
         }
+//      else {
+//            throw eroare_cautare_produs();
+//      }
     }
 }
