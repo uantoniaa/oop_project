@@ -8,7 +8,7 @@
 class Client {
     const int id_client;
     static int id_cnt;
-    int puncte_fidelitate;
+    int puncte_fidelitate{};
     std::string metoda_plata;
     Comanda cmd;
 public:
