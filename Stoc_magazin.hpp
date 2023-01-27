@@ -20,8 +20,8 @@ class Stoc_magazin{
 public:
 
     Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, const Comanda& cmd,std::vector<std::shared_ptr<Produs>> produse);
-    Stoc_magazin(const Stoc_magazin &other);
-    Stoc_magazin &operator=(const Stoc_magazin &other);
+    Stoc_magazin(const Stoc_magazin &other) = default;
+    Stoc_magazin &operator=(const Stoc_magazin &other) = default;
     //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda :
     void stoc_ramas();
     //functie care calculeaza suma de bani din magazin, de dupa comanda si

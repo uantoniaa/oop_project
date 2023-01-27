@@ -58,6 +58,6 @@ void swap(Comanda &cmd1, Comanda &cmd2) {
 }
 
 void Comanda::afisarePromotie() {
- for (auto &produs : produse)
+ for (const auto &produs : produse)
      produs->promotie();
 }

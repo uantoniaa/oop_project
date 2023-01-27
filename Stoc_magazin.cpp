@@ -55,23 +55,23 @@ Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteSt
                                                                                      cmd(cmd),
                                                                                      produse(std::move(produse)) {}
 
-Stoc_magazin &Stoc_magazin::operator=(const Stoc_magazin &other) {
-    nrCaiete_stoc = other.nrCaiete_stoc;
-    nrPixuri_stoc = other.nrPixuri_stoc;
-    nrGhiozdane_stoc = other.nrGhiozdane_stoc;
-    sumaInitiala = other.sumaInitiala;
-    cmd = other.cmd;
-    produse = other.produse;
-    return *this;
-}
+//Stoc_magazin &Stoc_magazin::operator=(const Stoc_magazin &other) {
+//    nrCaiete_stoc = other.nrCaiete_stoc;
+//    nrPixuri_stoc = other.nrPixuri_stoc;
+//    nrGhiozdane_stoc = other.nrGhiozdane_stoc;
+//    sumaInitiala = other.sumaInitiala;
+//    cmd = other.cmd;
+//    produse = other.produse;
+//    return *this;
+//}
 
-Stoc_magazin::Stoc_magazin(const Stoc_magazin &other) :
-        nrPixuri_stoc(other.nrPixuri_stoc),
-        nrGhiozdane_stoc(other.nrGhiozdane_stoc), nrCaiete_stoc(other.nrCaiete_stoc),
-        sumaInitiala(other.sumaInitiala),
-        cmd(other.cmd),
-        produse(other.produse) {}
-
+//Stoc_magazin::Stoc_magazin(const Stoc_magazin &other) :
+//        nrPixuri_stoc(other.nrPixuri_stoc),
+//        nrGhiozdane_stoc(other.nrGhiozdane_stoc), nrCaiete_stoc(other.nrCaiete_stoc),
+//        sumaInitiala(other.sumaInitiala),
+//        cmd(other.cmd),
+//        produse(other.produse) {}
+//
 
 
 void Stoc_magazin::cautaProdus(const std::string &firma) {

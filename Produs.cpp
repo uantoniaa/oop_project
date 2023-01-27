@@ -44,9 +44,6 @@ Produs::~Produs()= default;
 
 
 
-std::shared_ptr<Produs> Produs::clone() const {
-    return {};
-}
 
 const std::string &Produs::getFirma() const {
     return firma;
