@@ -11,10 +11,10 @@
 #include "Caiet.hpp"
 #include "Ghiozdan.hpp"
 class Stoc_magazin{
-    int nrPixuri_stoc; //numarul de pixuri de pe stocul magazinului
-    int nrGhiozdane_stoc; //numarul de ghiozdane de pe stoc
-    int nrCaiete_stoc; // numarul de caiete de pe stoc
-    double sumaInitiala; // banii care sunt in magazin inainte de comanda
+    int nrPixuri_stoc{}; //numarul de pixuri de pe stocul magazinului
+    int nrGhiozdane_stoc{}; //numarul de ghiozdane de pe stoc
+    int nrCaiete_stoc{}; // numarul de caiete de pe stoc
+    double sumaInitiala{}; // banii care sunt in magazin inainte de comanda
     Comanda cmd;
     std::vector<Produs*> produse;
 public:
@@ -38,4 +38,4 @@ public:
 
 };
 
-#endif //UNTITLED6_STOC_MAGAZIN_HPP
+#endif //OOP_STOC_MAGAZIN_HPP

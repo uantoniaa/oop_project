@@ -1,6 +1,7 @@
 #include "Comanda.hpp"
 
 #include <utility>
+#include <algorithm>
 #include "Exceptii.hpp"
 double Comanda::cmpr(Produs *pr1, Produs *pr2) {
     return pr1->getPret() < pr2->getPret();
@@ -24,9 +25,7 @@ Comanda::Comanda(int nrComanda, std::vector<Produs*> produse) : nrComanda(nrComa
                                                                                       produse(std::move(produse)),
                                                                                   pretBon(calculareBon())     {}
 
-Comanda::Comanda() {
-
-}
+Comanda::Comanda() = default;
 
 void Comanda::afisareProdusScump() {
     std::sort(produse.begin(), produse.end(), cmpr);

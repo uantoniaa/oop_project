@@ -9,7 +9,7 @@
 
 
 class Comanda{
-    int nrComanda;
+    int nrComanda{};
     std::vector<Produs*> produse;
     double pretBon{};
 public:

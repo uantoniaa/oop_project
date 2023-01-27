@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 #include "Ghiozdan.hpp"
 #include "Pix.hpp"
 #include "Caiet.hpp"
@@ -96,18 +95,16 @@ int main() {
     St2.stoc_ramas();
     try { St2.sumaDupaVanzari(); }
     catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
-//    auto vecprd = {p1.clone(), c1.clone(), g1.clone(), p2.clone(), c2.clone(), g2.clone()};
-////    for (const auto & it : vecprd) {
-////        std::cout << "Produsul are pretul de " <<it->getPret() << " lei si apartine firmei " << it->getFirma() << "." << std::endl;
-////    }
-//    auto *prd= reinterpret_cast<Produs *>(&vecprd);
-//    prd->promotie();
+    auto vecprd = {p1.clone(), c1.clone(), g1.clone(), p2.clone(), c2.clone(), g2.clone()};
+    for (const auto& i : vecprd) {
+        i->promotie();
+    }
     std::cout << std::endl;
-//    try {
+    try {
         St2.cautaProdus("Pilot");
         St2.cautaProdus("Vans");
         St2.cautaProdus("Sigma");
-//    }
-//    catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
+    }
+    catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
     return 0;
 }
