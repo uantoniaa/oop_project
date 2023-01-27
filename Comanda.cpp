@@ -3,9 +3,9 @@
 #include <utility>
 #include <algorithm>
 #include "Exceptii.hpp"
-double Comanda::cmpr(Produs *pr1, Produs *pr2) {
-    return pr1->getPret() < pr2->getPret();
-}
+//double Comanda::cmpr(Produs *pr1, Produs *pr2) {
+//    return pr1->getPret() < pr2->getPret();
+//}
 double Comanda::calculareBon() {
     for(auto & i : produse) {
         pretBon += i->valoare();
@@ -21,14 +21,16 @@ std::ostream& operator<<(std::ostream &COUT,const Comanda &comanda) {
     return COUT;
 }
 
-Comanda::Comanda(int nrComanda, std::vector<Produs*> produse) : nrComanda(nrComanda),
+Comanda::Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse) : nrComanda(nrComanda),
                                                                                       produse(std::move(produse)),
-                                                                                  pretBon(calculareBon())     {}
-
+                                                                                  pretBon(calculareBon())     {
+}
 
 
 void Comanda::afisareProdusScump() {
-    std::sort(produse.begin(), produse.end(), cmpr);
+    std::sort(produse.begin(), produse.end(), [&] (const auto & a, const auto &b) {
+        return a->getPret() < b->getPret();
+    } );
     std::size_t n = produse.size(); //astfel, cu vectorul ordonat crescator, stim ca ultimul element(de pe pozitia n-1) va fi cel mai scump
     std::cout << "Cel mai scump produs este cel cu pretul de " << produse[n - 1]->getPret() << " de lei." << std::endl
               << std::endl;
@@ -38,11 +40,24 @@ double Comanda::getPretBon() const {
     return pretBon;
 }
 
-Comanda &Comanda::operator=(const Comanda &other)  {
-    nrComanda=other.nrComanda;
-    produse=other.produse;
-    pretBon = other.pretBon;
+Comanda &Comanda::operator=(Comanda other)  {
+    swap(*this, other);
     return *this;
 }
 
-Comanda::Comanda(const Comanda &other):     nrComanda(other.nrComanda), produse(other.produse), pretBon(other.pretBon) {}
+Comanda::Comanda(const Comanda &other):     nrComanda(other.nrComanda), produse(other.produse), pretBon(other.pretBon)
+{
+    for (const auto &produs: other.produse)
+        produse.emplace_back(produs->clone());
+}
+
+void swap(Comanda &cmd1, Comanda &cmd2) {
+    std::swap(cmd1.nrComanda, cmd2.nrComanda);
+    std::swap(cmd1.produse, cmd2.produse);
+    std::swap(cmd1.pretBon, cmd2.pretBon);
+}
+
+void Comanda::afisarePromotie() {
+ for (auto &produs : produse)
+     produs->promotie();
+}

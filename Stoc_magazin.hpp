@@ -16,10 +16,10 @@ class Stoc_magazin{
     int nrCaiete_stoc{}; // numarul de caiete de pe stoc
     double sumaInitiala{}; // banii care sunt in magazin inainte de comanda
     Comanda cmd;
-    std::vector<Produs*> produse;
+    std::vector<std::shared_ptr<Produs>> produse;
 public:
 
-    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Comanda cmd, std::vector<Produs*> produse);
+    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, const Comanda& cmd,std::vector<std::shared_ptr<Produs>> produse);
     Stoc_magazin(const Stoc_magazin &other);
     Stoc_magazin &operator=(const Stoc_magazin &other);
     //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda :
@@ -29,12 +29,6 @@ public:
     double sumaDupaVanzari();
     void cautaProdus(const std::string& firma);
     friend std::ostream& operator<<(std::ostream& COUT,const Stoc_magazin &Stoc_magazin1);
-
-    int getNrPixuriStoc() const;
-
-    int getNrGhiozdaneStoc() const;
-
-    int getNrCaieteStoc() const;
 
 };
 

@@ -10,19 +10,19 @@
 
 class Comanda{
     int nrComanda{};
-    std::vector<Produs*> produse;
+    std::vector<std::shared_ptr<Produs>> produse;
     double pretBon{};
 public:
     Comanda() = default;
-    Comanda(int nrComanda, std::vector<Produs*> produse);
+    Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>>  produse);
     double calculareBon();
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &comanda);
     void afisareProdusScump();
-    Comanda &operator=(const Comanda &other) ;
+    Comanda &operator=(Comanda other) ;
     Comanda(const Comanda &other) ;
     double getPretBon() const;
-
-    static double cmpr(Produs *pr1, Produs *pr2);
+    void afisarePromotie();
+    friend void swap(Comanda &cmd1, Comanda &cmd2);
 };
 
 

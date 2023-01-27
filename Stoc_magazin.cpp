@@ -5,8 +5,8 @@
 #include "Stoc_magazin.hpp"
 #include "Exceptii.hpp"
 #include <utility>
-
-
+#include <memory>
+#include <iostream>
 std::ostream &operator<<(std::ostream &COUT, const Stoc_magazin &Stoc_magazin1) {
 
     COUT << "Numarul de pixuri de pe stoc, dinainte de comanda: " << Stoc_magazin1.nrPixuri_stoc << std::endl;
@@ -19,14 +19,14 @@ std::ostream &operator<<(std::ostream &COUT, const Stoc_magazin &Stoc_magazin1) 
 }
 
 void Stoc_magazin::stoc_ramas() {
-    for (auto produs: produse) {
-        if (dynamic_cast<Pix *>(produs) != nullptr) {
+    for (auto &produs: produse) {
+        if (std::dynamic_pointer_cast<Pix>(produs) != nullptr)  {
             nrPixuri_stoc = nrPixuri_stoc - produs->getNr();
             std::cout << "Numarul de pixuri de pe stoc, dupa comanda: " << nrPixuri_stoc << std::endl;
-        } else if (dynamic_cast<Caiet *>(produs) != nullptr) {
+        } else if (std::dynamic_pointer_cast<Caiet>(produs) != nullptr) {
             nrCaiete_stoc = nrCaiete_stoc - produs->getNr();
             std::cout << "Numarul de caiete de pe stoc, dupa comanda: " << nrCaiete_stoc << std::endl;
-        } else if (dynamic_cast<Ghiozdan *>(produs) != nullptr) {
+        } else if (std::dynamic_pointer_cast<Ghiozdan>(produs) != nullptr) {
             nrGhiozdane_stoc = nrGhiozdane_stoc - produs->getNr();
             std::cout << "Numarul de ghiozdane de pe stoc, dupa comanda: " << nrGhiozdane_stoc << std::endl;
         }
@@ -43,18 +43,17 @@ double Stoc_magazin::sumaDupaVanzari() {
     return sumadv;
 }
 
-Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Comanda cmd,
-                           std::vector<Produs *> produse) : nrPixuri_stoc(
+Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, const Comanda& cmd,
+                           std::vector<std::shared_ptr<Produs>> produse) : nrPixuri_stoc(
         nrPixuriStoc),
-                                                            nrGhiozdane_stoc(
+                                                                                     nrGhiozdane_stoc(
                                                                     nrGhiozdaneStoc),
-                                                            nrCaiete_stoc(
+                                                                                     nrCaiete_stoc(
                                                                     nrCaieteStoc),
-                                                            sumaInitiala(
+                                                                                     sumaInitiala(
                                                                     sumaInitiala),
-                                                            cmd(std::move(cmd)),
-                                                            produse(std::move(
-                                                                    produse)) {}
+                                                                                     cmd(cmd),
+                                                                                     produse(std::move(produse)) {}
 
 Stoc_magazin &Stoc_magazin::operator=(const Stoc_magazin &other) {
     nrCaiete_stoc = other.nrCaiete_stoc;
@@ -73,27 +72,18 @@ Stoc_magazin::Stoc_magazin(const Stoc_magazin &other) :
         cmd(other.cmd),
         produse(other.produse) {}
 
-int Stoc_magazin::getNrPixuriStoc() const {
-    return nrPixuri_stoc;
-}
 
-int Stoc_magazin::getNrGhiozdaneStoc() const {
-    return nrGhiozdane_stoc;
-}
-
-int Stoc_magazin::getNrCaieteStoc() const {
-    return nrCaiete_stoc;
-}
 
 void Stoc_magazin::cautaProdus(const std::string &firma) {
+    bool ok = false;
     for (auto &produs: produse) {
         std::size_t found;
         found = produs->getFirma().find(firma);
         if (found != std::string::npos) {
             std::cout << "Produsul cautat apartine firmei " << produs->getFirma() << "." << std::endl;
-        }
-        if (found == std::string::npos) {
-            throw eroare_cautare_produs();
+            ok = true;
         }
     }
+    if(!ok)
+        throw eroare_cautare_produs();
 }
