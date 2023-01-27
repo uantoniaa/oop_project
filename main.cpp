@@ -23,14 +23,13 @@ int main() {
     Caiet c1{12, 4, "Scheinder", "A4"};
     c1.setNrFile(45);
     std::cout << c1 << std::endl;
-
-    Comanda cmd1{18, {p1.clone(),g1.clone(),c1.clone()}};
     auto produse = {p1.clone(), c1.clone(), g1.clone()};
+    Comanda cmd1{18, std::vector<std::shared_ptr<Produs>> (produse)};
     cmd1.afisareProdusScump();
     cmd1.afisarePromotie();
     std::cout << cmd1 << std::endl;
     std::cout << "Date stoc magazin: " << std::endl;
-    Stoc_magazin St1(1000, 500, 700, 1544, cmd1, produse);
+    Stoc_magazin St1(1000, 500, 700, 1544, cmd1, std::vector<std::shared_ptr<Produs>> (produse));
     std::cout << St1 << std::endl;
     std::cout << "Stoc magazin dupa prima comanda:" << std::endl;
     St1.stoc_ramas();

@@ -76,7 +76,7 @@ Stoc_magazin::Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteSt
 
 void Stoc_magazin::cautaProdus(const std::string &firma) {
     bool ok = false;
-    for (auto &produs: produse) {
+    for (const auto &produs: produse) {
         std::size_t found;
         found = produs->getFirma().find(firma);
         if (found != std::string::npos) {

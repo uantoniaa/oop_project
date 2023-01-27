@@ -7,7 +7,7 @@
 //    return pr1->getPret() < pr2->getPret();
 //}
 double Comanda::calculareBon() {
-    for(auto & i : produse) {
+    for(const auto &i : produse) {
         pretBon += i->valoare();
     }
     if (pretBon > 150) //calculeaza reducerea de 15%, in cazul in care bonul este mai mare de 150 de lei
@@ -21,8 +21,8 @@ std::ostream& operator<<(std::ostream &COUT,const Comanda &comanda) {
     return COUT;
 }
 
-Comanda::Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse) : nrComanda(nrComanda),
-                                                                                      produse(std::move(produse)),
+Comanda::Comanda(int nrComanda, const std::vector<std::shared_ptr<Produs>> &produse) : nrComanda(nrComanda),
+                                                                                      produse(produse),
                                                                                   pretBon(calculareBon())     {
 }
 
