@@ -15,12 +15,6 @@ class eroare_cupon : public eroare_clase {
 public:
     explicit eroare_cupon(const std::string &var);
 };
-//trebuie ca suma de dupa vanzari sa fie mai mare decat cea de dinainte de vanzari
-class eroare_vanzari : public eroare_clase {
-public:
-    explicit eroare_vanzari();
-};
-
 class eroare_cautare_produs : public eroare_clase {
 public:
     explicit eroare_cautare_produs();

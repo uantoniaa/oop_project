@@ -37,23 +37,22 @@ int main() {
     cmd1.afisareProdusScump();
     std::cout << cmd1 << std::endl;
     //functie de sortare a produselor dupa pretul acestora
-
-    std::cout << "Date client 1: " << std::endl;
-    Client cl1(18, "cash", cmd1);
-    try {
-        cl1.client_fidel();
-    }
-    catch (eroare_cupon &error) { std::cout << error.what() << std::endl; }
-    std::cout << cl1 << std::endl;
-
     std::cout << "Date stoc magazin: " << std::endl;
     Stoc_magazin St1(1000, 500, 700, 1544, cmd1, produse);
     std::cout << St1 << std::endl;
     std::cout << "Stoc magazin dupa prima comanda:" << std::endl;
     St1.stoc_ramas();
-    try { St1.sumaDupaVanzari(); }
-    catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
+    std::cout << "Detalii despre suma de bani ramasa dupa vanzari:" << std::endl;
+    St1.sumaDupaVanzari();
 
+    try {
+        std::cout << "Date client 1: " << std::endl;
+        Client cl1(18, "cash", cmd1);
+        cl1.client_fidel();
+        std::cout << cl1 << std::endl;
+
+    }
+    catch (eroare_cupon &error) { std::cout << error.what() << std::endl; }
     //a doua comanda
     std::cout << "\tA DOUA COMANDA" << std::endl;
     std::cout << "Date pix a doua comanda:" << std::endl;
@@ -80,31 +79,31 @@ int main() {
     Comanda cmd2{19, produse2};
     cmd2.afisareProdusScump();
     std::cout << cmd2 << std::endl;
-    std::cout << "Date client 2: " << std::endl;
-    Client cl2(25, "cash", cmd2);
-    try {
-        cl2.client_fidel();
-    }
-    catch (eroare_cupon &error) { std::cout << error.what() << std::endl; }
-    std::cout << cl2 << std::endl;
-
     std::cout << "Date stoc magazin: " << std::endl;
-    Stoc_magazin St2(St1.getNrPixuriStoc(), St1.getNrGhiozdaneStoc(), St1.getNrCaieteStoc(), St1.sumaDupaVanzari(),  cmd2, produse2);
+    Stoc_magazin St2(St1.getNrPixuriStoc(), St1.getNrGhiozdaneStoc(), St1.getNrCaieteStoc(), St1.sumaDupaVanzari(),
+                     cmd2, produse2);
     std::cout << St2 << std::endl;
     std::cout << "Stoc magazin dupa a doua comanda:" << std::endl;
     St2.stoc_ramas();
-    try { St2.sumaDupaVanzari(); }
-    catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
+    std::cout << "Detalii despre suma de bani ramasa dupa vanzari:" << std::endl;
+    St2.sumaDupaVanzari();
+    try {
+        std::cout << "Date client 2: " << std::endl;
+        Client cl2(25, "cash", cmd2);
+        cl2.client_fidel();
+        std::cout << cl2 << std::endl;
+    }
+    catch (eroare_cupon &error) { std::cout << error.what() << std::endl; }
     auto vecprd = {p1.clone(), c1.clone(), g1.clone(), p2.clone(), c2.clone(), g2.clone()};
-    for (const auto& i : vecprd) {
+    for (const auto &i: vecprd) {
         i->promotie();
     }
     std::cout << std::endl;
     try {
         St2.cautaProdus("Pilot");
-        St2.cautaProdus("Vans");
+        St1.cautaProdus("Bic");
         St2.cautaProdus("Sigma");
     }
-    catch (eroare_vanzari &error) { std::cout << error.what() << std::endl; }
+    catch (eroare_cautare_produs &error) { std::cout << error.what() << std::endl; }
     return 0;
 }

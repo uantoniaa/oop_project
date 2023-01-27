@@ -37,8 +37,6 @@ double Stoc_magazin::sumaDupaVanzari() {
     double pretB = cmd.getPretBon();
     double sumadv = sumaInitiala + pretB;
     std::cout << "Suma de bani de dupa vanzari este de: " << sumadv << " lei." << std::endl;
-    if (sumaInitiala == sumadv)
-        throw eroare_vanzari();
     double procentVanzare = (100 * pretB) / sumadv;
     std::cout << "Suma de bani din magazin a crescut fata de ziua precedenta cu un procent de: " << procentVanzare
               << "%." << std::endl;
@@ -94,8 +92,8 @@ void Stoc_magazin::cautaProdus(const std::string &firma) {
         if (found != std::string::npos) {
             std::cout << "Produsul cautat apartine firmei " << produs->getFirma() << "." << std::endl;
         }
-//      else {
-//            throw eroare_cautare_produs();
-//      }
+        if (found == std::string::npos) {
+            throw eroare_cautare_produs();
+        }
     }
 }

@@ -15,9 +15,9 @@ double Comanda::calculareBon() {
     return pretBon;
 }
 
-std::ostream& operator<<(std::ostream &COUT,const Comanda &Comanda1) {
-    COUT << " Nr. comanda: " << Comanda1.nrComanda << std::endl;
-    COUT << " Pret bon: " << Comanda1.pretBon << " lei" << std::endl;
+std::ostream& operator<<(std::ostream &COUT,const Comanda &comanda) {
+    COUT << " Nr. comanda: " << comanda.nrComanda << std::endl;
+    COUT << " Pret bon: " << comanda.pretBon << " lei" << std::endl;
     return COUT;
 }
 
@@ -25,7 +25,7 @@ Comanda::Comanda(int nrComanda, std::vector<Produs*> produse) : nrComanda(nrComa
                                                                                       produse(std::move(produse)),
                                                                                   pretBon(calculareBon())     {}
 
-Comanda::Comanda() = default;
+
 
 void Comanda::afisareProdusScump() {
     std::sort(produse.begin(), produse.end(), cmpr);
@@ -38,4 +38,11 @@ double Comanda::getPretBon() const {
     return pretBon;
 }
 
+Comanda &Comanda::operator=(const Comanda &other)  {
+    nrComanda=other.nrComanda;
+    produse=other.produse;
+    pretBon = other.pretBon;
+    return *this;
+}
 
+Comanda::Comanda(const Comanda &other):     nrComanda(other.nrComanda), produse(other.produse), pretBon(other.pretBon) {}

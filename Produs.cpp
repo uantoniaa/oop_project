@@ -29,7 +29,7 @@ double Produs::valoare()  const {
     return getNr() * getPret();
 }
 
-Produs::~Produs(){}
+Produs::~Produs()= default;
 
 
 
