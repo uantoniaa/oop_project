@@ -11,25 +11,21 @@
 #include "Caiet.hpp"
 #include "Ghiozdan.hpp"
 class Stoc_magazin{
-    int nrPixuri_stoc;
-    int nrGhiozdane_stoc;
-    int nrCaiete_stoc;
+    int nrPixuri_stoc; //numarul de pixuri de pe stocul magazinului
+    int nrGhiozdane_stoc; //numarul de ghiozdane de pe stoc
+    int nrCaiete_stoc; // numarul de caiete de pe stoc
     double sumaInitiala; // banii care sunt in magazin inainte de comanda
-    Pix p;
-    Caiet c;
-    Ghiozdan g;
     Comanda cmd;
     std::vector<Produs*> produse;
 public:
 
-    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Pix p,
-                 Caiet c, Ghiozdan g, Comanda cmd, std::vector<Produs*> produse);
+    Stoc_magazin(int nrPixuriStoc, int nrGhiozdaneStoc, int nrCaieteStoc, double sumaInitiala, Comanda cmd, std::vector<Produs*> produse);
     Stoc_magazin(const Stoc_magazin &other);
-    Stoc_magazin &operator=(const Stoc_magazin &other); //o sa am un vector de pointeri, deci are rost cc/op=
-    //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda
+    Stoc_magazin &operator=(const Stoc_magazin &other);
+    //functie care calculeaza nr de pixuri, acuarele, caiete si ghiozdane ramase dupa comanda :
     void stoc_ramas();
     //functie care calculeaza suma de bani din magazin, de dupa comanda si
-    //cu cat la suta a crescut suma de bani din magazin fata de ziua precedenta
+    //cu cat la suta a crescut suma de bani din magazin fata de ziua precedenta :
     double sumaDupaVanzari();
     void cautaProdus(const std::string& firma);
     friend std::ostream& operator<<(std::ostream& COUT,const Stoc_magazin &Stoc_magazin1);
