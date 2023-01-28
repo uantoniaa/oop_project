@@ -8,27 +8,41 @@
 #include <iostream>
 #include <string>
 #include <memory>
+
 class Produs {
 private:
     int pret{};
 protected:
     int nr{};
+
     Produs &operator=(const Produs &other) = default;
+
     Produs(const Produs &other) = default;
+
 private:
     std::string firma;
+
     virtual void afisare(std::ostream &) const;
+
 public:
     Produs();
+
     Produs(int pret, int nr, std::string firma);
+
     virtual std::shared_ptr<Produs> clone() const = 0;
-    friend std::ostream& operator<<(std::ostream& COUT,const Produs &Produs1);
-    virtual int promotie()=0;
+
+    friend std::ostream &operator<<(std::ostream &COUT, const Produs &Produs1);
+
+    virtual int promotie() = 0;
+
     const std::string &getFirma() const;
 
     double valoare() const;
-    int getNr() const ;
+
+    int getNr() const;
+
     int getPret() const;
+
     virtual ~Produs();
 };
 

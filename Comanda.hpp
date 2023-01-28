@@ -4,24 +4,33 @@
 
 #ifndef UNTITLED6_COMANDA_HPP
 #define UNTITLED6_COMANDA_HPP
+
 #include "Produs.hpp"
 #include <vector>
+#include "Angajat.hpp"
 
-
-class Comanda{
+class Comanda {
     int nrComanda{};
     std::vector<std::shared_ptr<Produs>> produse;
-    double pretBon{} ;
+    double pretBon{};
+    Angajat<int> a;
 public:
-    Comanda();
-    Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse);
+    Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse, Angajat<int> a);
+
     double calculareBon();
-    friend std::ostream& operator<<(std::ostream& COUT,const Comanda &comanda);
+
+    friend std::ostream &operator<<(std::ostream &COUT, const Comanda &comanda);
+
     void afisareProdusScump();
-    Comanda &operator=(Comanda other) ;
-    Comanda(const Comanda &other) ;
+
+    Comanda &operator=(Comanda other);
+
+    Comanda(const Comanda &other);
+
     double getPretBon() const;
+
     void afisarePromotie();
+
     friend void swap(Comanda &cmd1, Comanda &cmd2);
 
     virtual ~Comanda();

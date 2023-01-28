@@ -5,31 +5,35 @@
 #include "Produs.hpp"
 
 #include <utility>
+
 void Produs::afisare(std::ostream &) const {}
+
 Produs::Produs(int pret, int nr, std::string firma) : pret(pret), nr(nr), firma(std::move(firma)) {}
+
 Produs::Produs() {}
-std::ostream& operator<<(std::ostream &COUT,const Produs &Produs1)
-{
-    COUT << "Pret:"<<Produs1.pret<<" lei"<<std::endl
-         <<"Numar: "<<Produs1.nr<<std::endl
-         << "Firma:"<<Produs1.firma<<std::endl;
+
+std::ostream &operator<<(std::ostream &COUT, const Produs &Produs1) {
+    COUT << " Pret:" << Produs1.pret << " lei" << std::endl
+         << " Numar: " << Produs1.nr << std::endl
+         << " Firma:" << Produs1.firma << std::endl;
     Produs1.afisare(COUT);
-    COUT<< "\n";
+    COUT << "\n";
     return COUT;
 }
 
 int Produs::getPret() const {
     return pret;
 }
+
 int Produs::getNr() const {
     return nr;
 }
 
-double Produs::valoare()  const {
+double Produs::valoare() const {
     return getNr() * getPret();
 }
 
-Produs::~Produs()= default;
+Produs::~Produs() = default;
 
 
 
