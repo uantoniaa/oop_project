@@ -10,13 +10,13 @@ Ghiozdan::Ghiozdan(int pret, int nr, const std::string &firma, std::string categ
         : Produs(pret, nr, firma), categorie(std::move(categorie)), culoare(std::move(culoare)) {}
 
 void Ghiozdan::afisare(std::ostream &COUT) const {
-    COUT << "Categorie: " << categorie << "\n" << "Culoare: " << culoare << "\n";
+    COUT << " Categorie: " << categorie << "\n" << " Culoare: " << culoare << "\n";
 }
 
 int Ghiozdan::promotie() {
     if (nr >= 12 && getPret() >= 80) {
         nr += 2;
-        std::cout << "Acum, numarul ghiozdanelor este cu 2 mai mare, datorita promotiei, fiind " << nr << "."
+        std::cout << " Acum, numarul ghiozdanelor este cu 2 mai mare, datorita promotiei, fiind " << nr << "."
                   << std::endl;
     }
     return nr;
