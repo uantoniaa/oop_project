@@ -23,6 +23,8 @@ public:
     double getPretBon() const;
     void afisarePromotie();
     friend void swap(Comanda &cmd1, Comanda &cmd2);
+
+    virtual ~Comanda();
 };
 
 

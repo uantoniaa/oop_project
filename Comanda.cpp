@@ -5,6 +5,7 @@
 #include "Exceptii.hpp"
 
 double Comanda::calculareBon() {
+
     for(const auto &i : produse) {
         pretBon += i->valoare();
     }
@@ -21,7 +22,6 @@ std::ostream& operator<<(std::ostream &COUT,const Comanda &comanda) {
 
 Comanda::Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse) : nrComanda(nrComanda),
                                                                                    produse(std::move(produse)) , pretBon(calculareBon())    {
-
 }
 
 void Comanda::afisareProdusScump() {
@@ -57,4 +57,8 @@ void swap(Comanda &cmd1, Comanda &cmd2) {
 void Comanda::afisarePromotie() {
  for (const auto &produs : produse)
      produs->promotie();
+}
+
+Comanda::~Comanda() {
+
 }
