@@ -5,7 +5,7 @@
 #include "Exceptii.hpp"
 
 double Comanda::calculareBon() {
-
+    pretBon = 0.0;
     for(const auto &i : produse) {
         pretBon += i->valoare();
     }
