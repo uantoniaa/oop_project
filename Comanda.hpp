@@ -9,11 +9,11 @@
 
 
 class Comanda{
-    int nrComanda = 0;
+    int nrComanda{};
     std::vector<std::shared_ptr<Produs>> produse;
-    double pretBon ;
+    double pretBon{} ;
 public:
-    Comanda() = default;
+    Comanda();
     Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse);
     double calculareBon();
     friend std::ostream& operator<<(std::ostream& COUT,const Comanda &comanda);

@@ -20,10 +20,6 @@ std::ostream& operator<<(std::ostream &COUT,const Comanda &comanda) {
     return COUT;
 }
 
-Comanda::Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse) : nrComanda(nrComanda),
-                                                                                   produse(std::move(produse)) , pretBon(calculareBon())    {
-}
-
 void Comanda::afisareProdusScump() {
     std::sort(produse.begin(), produse.end(), [&] (const auto & a, const auto &b) {
         return a->getPret() < b->getPret();
@@ -60,5 +56,13 @@ void Comanda::afisarePromotie() {
 }
 
 Comanda::~Comanda() {
+
+}
+
+
+Comanda::Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse) : nrComanda(nrComanda), produse(std::move(produse)),pretBon(calculareBon()){
+
+}
+Comanda::Comanda() : pretBon() {
 
 }
