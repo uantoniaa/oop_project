@@ -3,9 +3,7 @@
 #include <utility>
 #include <algorithm>
 #include "Exceptii.hpp"
-//double Comanda::cmpr(Produs *pr1, Produs *pr2) {
-//    return pr1->getPret() < pr2->getPret();
-//}
+
 double Comanda::calculareBon() {
     for(const auto &i : produse) {
         pretBon += i->valoare();

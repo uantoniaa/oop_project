@@ -11,7 +11,7 @@
 class Comanda{
     int nrComanda = 0;
     std::vector<std::shared_ptr<Produs>> produse;
-    double pretBon = 0;
+    double pretBon = 0.0;
 public:
     Comanda() = default;
     Comanda(int nrComanda,std::vector<std::shared_ptr<Produs>> produse);
