@@ -56,9 +56,6 @@ void Comanda::afisarePromotie() {
         produs->promotie();
 }
 
-Comanda::~Comanda() {
-
-}
 
 
 Comanda::Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse, Angajat<int> a) : nrComanda(nrComanda),

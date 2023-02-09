@@ -33,7 +33,7 @@ public:
 
     friend void swap(Comanda &cmd1, Comanda &cmd2);
 
-    virtual ~Comanda();
+    virtual ~Comanda() = default;
 };
 
 
