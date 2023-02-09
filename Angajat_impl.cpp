@@ -8,4 +8,4 @@ class
 Angajat<int>;
 
 template
-std::ostream &operator<<<>(std::ostream &os, const Angajat<int> &Angajat1);
+std::ostream &operator<< <>(std::ostream &os, const Angajat<int> &Angajat1);

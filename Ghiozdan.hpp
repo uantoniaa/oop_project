@@ -11,10 +11,11 @@
 class Ghiozdan : public Produs {
     std::string categorie;
     std::string culoare;
-
+    friend class GhiozdanBuilder;
     void afisare(std::ostream &COUT) const override;
 
 public:
+    Ghiozdan() = default;
     Ghiozdan(int pret, int nr, const std::string &firma, std::string categorie, std::string culoare);
 
     int promotie() override;
@@ -24,5 +25,40 @@ public:
     }
 };
 
+class GhiozdanBuilder{
+private:
+    Ghiozdan g;
+public:
+
+    GhiozdanBuilder() = default;
+
+    GhiozdanBuilder& pretGhiozdan(int pret_){
+        g.pret = pret_;
+        return (*this);
+    }
+
+    GhiozdanBuilder& nrGhiozdan(int nr_){
+        g.nr = nr_;
+        return (*this);
+    }
+
+    GhiozdanBuilder& firmaGhiozdan(const std::string &firma_){
+        g.firma = firma_;
+        return (*this);
+    }
+
+    GhiozdanBuilder& marimeGhiozdan(const std::string &categorie_){
+        g.categorie = categorie_;
+        return (*this);
+    }
+
+    GhiozdanBuilder& culoareGhiozdan(const std::string &culoare_){
+        g.culoare = culoare_;
+        return (*this);
+    }
+    Ghiozdan build(){
+        return g;
+    }
+};
 
 #endif //UNTITLED6_GHIOZDAN_HPP

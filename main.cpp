@@ -13,26 +13,29 @@ int main() {
     //prima comanda
     std::cout << " Angajatii magazinului: " << std::endl;
 
-    Angajat<int> a1(1, 3500, 27, 3);
+    Angajat<int> a1(1, 3500, 27, 3, 8);
     std::cout << a1 << std::endl;
     a1.marire_salariu();
 
-    Angajat<int> a2(2, 3200, 24, 5);
+    Angajat<int> a2(2, 3200, 24, 5, 8);
     std::cout << a2 << std::endl;
     a2.marire_salariu();
 
-    Angajat<int> a3(3, 4000, 30, 7);
+    Angajat<int> a3(3, 4000, 30, 7, 9);
     std::cout << a3 << std::endl;
     a3.marire_salariu();
 
 
     std::cout << "\n\n PRIMA COMANDA" << std::endl;
+
     std::cout << " Date pix prima comanda:" << std::endl;
-    Pix p1{5, 35, "Bic", "normal", "neagra"};
+    PixBuilder pb;
+    Pix p1=pb.pretPix(5).nrPix(35).firmaPix("Bic").specificatiePix("cu gel").culoarePastaPix("neagra").build();
     std::cout << p1 << std::endl;
 
     std::cout << " Date Ghiozdan prima comanda:" << std::endl;
-    Ghiozdan g1{60, 1, "Nike", "laptop", "rosu"};
+    GhiozdanBuilder gb;
+    Ghiozdan g1=gb.pretGhiozdan(60).nrGhiozdan(1).firmaGhiozdan("Nike").marimeGhiozdan("laptop").culoareGhiozdan("rosu").build();
     std::cout << g1 << std::endl;
 
     std::cout << " Date Caiet prima comanda:" << std::endl;
