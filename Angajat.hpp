@@ -9,7 +9,7 @@ template<typename A>
 class Angajat;
 
 template<typename A>
-std::ostream &operator<<(std::ostream &os, const Angajat<A> &Angajat1);
+std::ostream &operator<<(std::ostream &COUT, const Angajat<A> &Angajat1);
 
 template<typename A>
 class Angajat {
@@ -20,7 +20,7 @@ class Angajat {
 public:
     Angajat() = default;
 
-    Angajat(A id, A salariu, A varsta, A aniExperienta);
+    Angajat(A id_, A salariu_, A varsta_, A ani_experienta_);
 
     A marire_salariu();
 
@@ -30,7 +30,7 @@ public:
 
     A getId() const;
 
-    friend std::ostream &operator<<<>(std::ostream &os, const Angajat<A> &Angajat1);
+    friend std::ostream &operator<<<>(std::ostream &COUT, const Angajat<A> &Angajat1);
 
     ~Angajat() = default;
 };

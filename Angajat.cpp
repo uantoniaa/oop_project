@@ -6,8 +6,8 @@
 #include "Angajat.hpp"
 
 template<typename A>
-Angajat<A>::Angajat(A id, A salariu, A varsta, A aniExperienta) : id(id), salariu(salariu), varsta(varsta),
-                                                                  ani_experienta(aniExperienta) {}
+Angajat<A>::Angajat(A id_, A salariu_, A varsta_, A ani_experienta_) : id(id_), salariu(salariu_), varsta(varsta_),
+                                                                  ani_experienta(ani_experienta_) {}
 
 template<typename A>
 A Angajat<A>::marire_salariu() {
