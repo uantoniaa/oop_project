@@ -40,7 +40,7 @@ Comanda &Comanda::operator=(Comanda other) {
     return *this;
 }
 
-Comanda::Comanda(const Comanda &other) : nrComanda(other.nrComanda), pretBon(other.pretBon), a(a) {
+Comanda::Comanda(const Comanda &other) : nrComanda(other.nrComanda), pretBon(other.pretBon), a(other.a) {
     for (const auto &produs: other.produse)
         produse.emplace_back(produs->clone());
 }
