@@ -11,8 +11,8 @@
 
 class Produs {
 protected:
-    int nr{};
     int pret{};
+    int nr{};
     std::string firma;
 public:
     int getPret() const;
