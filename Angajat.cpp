@@ -15,6 +15,7 @@ A Angajat<A>::marire_salariu() {
         salariu = salariu + 0.25 * salariu;
         std::cout << " Salariul este acum de " << salariu << " lei.";
     }
+    return 0;
 }
 
 template<typename A>
