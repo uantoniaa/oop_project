@@ -15,7 +15,7 @@ class Comanda {
     double pretBon{};
     Angajat<int> a;
 public:
-    Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse, Angajat<int> a);
+    Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse,const Angajat<int> &a);
 
     double calculareBon();
 

@@ -58,7 +58,7 @@ void Comanda::afisarePromotie() {
 
 
 
-Comanda::Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse, Angajat<int> a) : nrComanda(nrComanda),
+Comanda::Comanda(int nrComanda, std::vector<std::shared_ptr<Produs>> produse, const Angajat<int> &a) : nrComanda(nrComanda),
                                                                                                 produse(std::move(
                                                                                                         produse)),
                                                                                                 pretBon(calculareBon()),
