@@ -21,9 +21,6 @@ std::ostream &operator<<(std::ostream &COUT, const Produs &Produs1) {
     return COUT;
 }
 
-int Produs::getPret() const {
-    return pret;
-}
 
 int Produs::getNr() const {
     return nr;
@@ -51,6 +48,10 @@ Produs::~Produs() = default;
 
 const std::string &Produs::getFirma() const {
     return firma;
+}
+
+int Produs::getPret() const {
+    return pret;
 }
 
 

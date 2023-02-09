@@ -10,17 +10,19 @@
 #include <memory>
 
 class Produs {
-private:
-    int pret{};
 protected:
     int nr{};
+    int pret{};
+    std::string firma;
+public:
+    int getPret() const;
 
+protected:
     Produs &operator=(const Produs &other) = default;
 
     Produs(const Produs &other) = default;
 
 private:
-    std::string firma;
 
     virtual void afisare(std::ostream &) const;
 
@@ -41,7 +43,6 @@ public:
 
     int getNr() const;
 
-    int getPret() const;
 
     virtual ~Produs();
 };
