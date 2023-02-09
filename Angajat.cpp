@@ -24,6 +24,9 @@ A Angajat<A>::getId() const {
 }
 
 template<typename A>
+Angajat<A>::Angajat() {}
+
+template<typename A>
 std::ostream &operator<<(std::ostream &COUT, const Angajat<A> &Angajat1) {
     COUT << " ID: " << Angajat1.id << std::endl;
     COUT << " Salariu: " << Angajat1.salariu << " lei" << std::endl;

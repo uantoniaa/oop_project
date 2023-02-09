@@ -18,7 +18,7 @@ class Angajat {
     A varsta;
     A ani_experienta;
 public:
-    Angajat() = default;
+    explicit Angajat();
 
     Angajat(A id_, A salariu_, A varsta_, A ani_experienta_);
 
