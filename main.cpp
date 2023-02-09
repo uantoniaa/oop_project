@@ -38,6 +38,7 @@ int main() {
     std::cout << " Date Caiet prima comanda:" << std::endl;
     CaietBuilder cb;
     Caiet c1=cb.pretCaiet(12).nrCaiet(4).firmaCaiet("Scheinder").marimeCaiet("A4").build();
+    c1.setNrFile(45);
     std::cout << c1 << std::endl;
 
     Comanda cmd1{18, {p1.clone(), c1.clone(), g1.clone()}, a2};
