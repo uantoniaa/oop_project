@@ -57,6 +57,11 @@ std::ostream &operator<<(std::ostream &COUT, const Angajat<A> &Angajat1) {
     return COUT;
 }
 
+template<typename A>
+Angajat<A>::Angajat() {
+
+}
+
 
 //template<typename A>
 //Angajat<A>::Angajat(const Angajat<A> &other) : id(other.id), salariu(other.salariu),
